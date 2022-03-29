@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Ourviewdivunit"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OurViewDivUnit"
+  AliasName="Ourviewdivunit"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="UId"
+    IsNotNull="true"
+    ColumnName="u_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Parentid"
+    IsNotNull="true"
+    ColumnName="ParentID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DId"
+    IsNotNull="true"
+    ColumnName="d_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="UParentId"
+    ColumnName="u_parent_id"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="UTitle"
+    ColumnName="u_title"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Isacive"
+    ColumnName="IsAcive"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DTittle"
+    IsNotNull="true"
+    ColumnName="d_tittle"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="STitle"
+    IsNotNull="true"
+    ColumnName="s_title"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DIsactive"
+    IsNotNull="true"
+    ColumnName="d_IsActive"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Istashkeel"
+    IsNotNull="true"
+    ColumnName="IsTashkeel"
+    SQLType="BIT"
+    Type="java.lang.Boolean"
+    ColumnType="BIT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Sortid"
+    ColumnName="SortID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Tmpid"
+    ColumnName="tmpID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewDivUnit"
+    PrimaryKey="true"/>
+  <Key
+    Name="OurviewdivunitPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="OurviewdivunitPrimaryKey"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.Ourviewdivunit.UId"/>
+      <Item Value="model.EO.Ourviewdivunit.Parentid"/>
+      <Item Value="model.EO.Ourviewdivunit.DId"/>
+      <Item Value="model.EO.Ourviewdivunit.UParentId"/>
+      <Item Value="model.EO.Ourviewdivunit.UTitle"/>
+      <Item Value="model.EO.Ourviewdivunit.Isacive"/>
+      <Item Value="model.EO.Ourviewdivunit.DTittle"/>
+      <Item Value="model.EO.Ourviewdivunit.STitle"/>
+      <Item Value="model.EO.Ourviewdivunit.DIsactive"/>
+      <Item Value="model.EO.Ourviewdivunit.Istashkeel"/>
+      <Item Value="model.EO.Ourviewdivunit.Sortid"/>
+      <Item Value="model.EO.Ourviewdivunit.Tmpid"/>
+    </AttrArray>
+  </Key>
+</Entity>

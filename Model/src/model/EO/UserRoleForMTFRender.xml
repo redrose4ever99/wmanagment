@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserRoleForMTFRender"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USER_ROLE"
+  AliasName="UserRoleForMTFRender"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USER_ROLE"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserId"
+    ColumnName="USER_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USER_ROLE"/>
+  <Attribute
+    Name="RoleName"
+    ColumnName="ROLE_NAME"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NCHAR"
+    TableName="USER_ROLE"/>
+  <Attribute
+    Name="RoleStatus"
+    ColumnName="ROLE_STATUS"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USER_ROLE"/>
+  <Key
+    Name="PKUSERROLE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_USER_ROLE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.UserRoleForMTFRender.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

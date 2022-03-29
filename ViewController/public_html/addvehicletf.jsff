@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_addvehicletf.psl1}" dimensionsFrom="children"
+                           styleClass="AFStretchWidth " inlineStyle="height:750px;">
+        <f:facet name="center">
+            <af:panelBox id="pb1" binding="#{backingBeanScope.backing_addvehicletf.pb1}" background="light"
+                         titleHalign="center" showDisclosure="false">
+                <f:facet name="toolbar"/>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_addvehicletf-->
+</ui:composition>

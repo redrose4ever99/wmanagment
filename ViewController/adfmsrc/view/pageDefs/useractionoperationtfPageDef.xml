@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="useractionoperationtfPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UsersForActionOperationView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UsersForActionOperationView1Iterator"/>
+    <searchRegion Criteria="UsersForActionOperationViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="UsersForActionOperationView1Iterator" id="UsersForActionOperationViewCriteriaQuery"/>
+    <iterator Binds="UsersActionForOperationView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UsersActionForOperationView2Iterator"/>
+    <searchRegion Criteria="UsersActionForOperationViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="UsersActionForOperationView2Iterator" id="UsersActionForOperationViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="UsersForActionOperationView1Iterator" id="UsersForActionOperationView1">
+      <nodeDefinition DefName="model.VO.UsersForActionOperationView" Name="UsersForActionOperationView10">
+        <AttrNames>
+          <Item Value="UserFullName"/>
+          <Item Value="UserName"/>
+          <Item Value="UserPart"/>
+          <Item Value="UserPurview"/>
+          <Item Value="AcountState"/>
+          <Item Value="UserCity"/>
+          <Item Value="IpIddress"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="UsersActionForOperationView2Iterator" id="UsersActionForOperationView2">
+      <nodeDefinition DefName="model.VO.UsersActionForOperationView" Name="UsersActionForOperationView20">
+        <AttrNames>
+          <Item Value="ActionType"/>
+          <Item Value="TableName"/>
+          <Item Value="TableId"/>
+          <Item Value="ActionTime"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="maintfPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="UserManagementTF1" taskFlowId="/WEB-INF/UserManagementTF.xml#UserManagementTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="GroupManagementTF1" taskFlowId="/WEB-INF/GroupManagementTF.xml#GroupManagementTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="UserActionOperationTF1" taskFlowId="/WEB-INF/UserActionOperationTF.xml#UserActionOperationTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="UserChangePasswordTF1" taskFlowId="/WEB-INF/UserChangePasswordTF.xml#UserChangePasswordTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="AddVehicleTF1" taskFlowId="/WEB-INF/AddVehicleTF.xml#AddVehicleTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

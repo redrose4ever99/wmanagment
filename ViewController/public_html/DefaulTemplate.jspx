@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:h="http://java.sun.com/jsf/html">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <af:pageTemplateDef var="attrs" definition="private">
+        <af:panelGroupLayout id="pt_pgl1" layout="vertical">
+            <af:panelGridLayout id="pt_pgl6" dimensionsFrom="children">
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr1">
+                    <af:gridCell marginStart="5px" width="34%" id="pt_gc1">
+                        <af:panelGroupLayout id="pt_pgl2" layout="horizontal">
+                            <af:spacer id="pt_s1"/>
+                            <h:outputText value="مرحباً:" id="pt_ot1"
+                                          style="font-size:medium; font-family:'Times New Roman'; font-weight:bold; color:Blue;"/>
+                            <af:spacer id="pt_s2"/>
+                            <h:outputText value="#{utility.bindingFullName}" id="pt_ot2"
+                                          style="font-size:medium; font-family:'Times New Roman'; font-weight:bold; color:WindowText;"/>
+                        </af:panelGroupLayout>
+                        <af:spacer id="pt_s3"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="pt_gc2" halign="center">
+                        <h:outputText value="منظومة إدارة الوقود" id="pt_ot3"
+                                      style="font-size:large; font-family:'Times New Roman'; font-weight:bold; color:WindowText;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc3" halign="end">
+                        <af:panelGroupLayout id="pt_pgl4" layout="horizontal">
+                            <af:link text="تسجيل خروج" id="pt_l1" action="logout"
+                                     inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold; color:Blue;"/>
+                            <af:spacer id="pt_s6"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="pt_pgl5" layout="scroll" rendered="true">
+            <table style="height:100.0ex;">
+                <tr style="height:100.0ex;">
+                    <td>
+                        <af:facetRef facetName="main"/>
+                    </td>
+                </tr>
+            </table>
+        </af:panelGroupLayout>
+        <af:xmlContent>
+            <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+                <description/>
+                <display-name>DefaulTemplate</display-name>
+                <facet>
+                    <facet-name>
+                        main
+                    </facet-name>
+                </facet>
+            </component>
+        </af:xmlContent>
+    </af:pageTemplateDef>
+</jsp:root>

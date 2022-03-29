@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsersForActionOperationView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="ProgramNconversionsUserPart1"
+    ViewObjectName="model.VO.ProgramNconversionsUserPart"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProgramNconversionsPurview1"
+    ViewObjectName="model.VO.ProgramNconversionsPurview"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProgramNconversionsAcountStat1"
+    ViewObjectName="model.VO.ProgramNconversionsAcountStat"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItsNconversionsForCity1"
+    ViewObjectName="model.VO.ItsNconversionsForCity"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_UserPart"
+    ListVOName="ProgramNconversionsUserPart1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserPart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UserPurview"
+    ListVOName="ProgramNconversionsPurview1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserPurview"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AcountState"
+    ListVOName="ProgramNconversionsAcountStat1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcountState"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UserCity"
+    ListVOName="ItsNconversionsForCity1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserCity"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="UsersForActionOperation"
+    Entity="model.EO.UsersForActionOperation"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="UsersForActionOperation"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="UserFullName"
+    PrecisionRule="true"
+    EntityAttrName="UserFullName"
+    EntityUsage="UsersForActionOperation"
+    AliasName="USER_FULL_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.UserFullName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserName"
+    PrecisionRule="true"
+    EntityAttrName="UserName"
+    EntityUsage="UsersForActionOperation"
+    AliasName="USER_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserPassword"
+    PrecisionRule="true"
+    EntityAttrName="UserPassword"
+    EntityUsage="UsersForActionOperation"
+    AliasName="USER_PASSWORD">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserPart"
+    PrecisionRule="true"
+    EntityAttrName="UserPart"
+    EntityUsage="UsersForActionOperation"
+    AliasName="USER_PART"
+    LOVName="LOV_UserPart">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.UserPart_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserPurview"
+    PrecisionRule="true"
+    EntityAttrName="UserPurview"
+    EntityUsage="UsersForActionOperation"
+    AliasName="USER_PURVIEW"
+    LOVName="LOV_UserPurview">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.UserPurview_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AcountState"
+    PrecisionRule="true"
+    EntityAttrName="AcountState"
+    EntityUsage="UsersForActionOperation"
+    AliasName="ACOUNT_STATE"
+    LOVName="LOV_AcountState">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.AcountState_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IpIddress"
+    PrecisionRule="true"
+    EntityAttrName="IpIddress"
+    EntityUsage="UsersForActionOperation"
+    AliasName="IP_IDDRESS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.IpIddress_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserCity"
+    PrecisionRule="true"
+    EntityAttrName="UserCity"
+    EntityUsage="UsersForActionOperation"
+    AliasName="USER_CITY"
+    LOVName="LOV_UserCity">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForActionOperationView.UserCity_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredDate"
+    PrecisionRule="true"
+    EntityAttrName="EnteredDate"
+    EntityUsage="UsersForActionOperation"
+    AliasName="ENTERED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredUser"
+    PrecisionRule="true"
+    EntityAttrName="EnteredUser"
+    EntityUsage="UsersForActionOperation"
+    AliasName="ENTERED_USER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="UsersForActionOperation"
+    AliasName="UPDATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdatedOn"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedOn"
+    EntityUsage="UsersForActionOperation"
+    AliasName="UPDATED_ON">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="UsersForActionOperationViewCriteria"
+    ViewObjectName="model.VO.UsersForActionOperationView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Advanced"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="false"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="UsersForActionOperationViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="UserFullName"
+        ViewAttribute="UserFullName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="UsersActionForOperationView"
+    ViewLink="model.VO.UsersWithUserAction"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Id"
+      Ascending="false"/>
+  </SortCriteria>
+</ViewObject>

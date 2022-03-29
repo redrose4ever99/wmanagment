@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Ourviewvgvtft"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OurViewVgVtFt"
+  AliasName="Ourviewvgvtft"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Groupname"
+    IsNotNull="true"
+    ColumnName="GroupName"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Categoryid"
+    IsNotNull="true"
+    ColumnName="CategoryID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Fueltype"
+    IsNotNull="true"
+    ColumnName="FuelType"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Enginfuelcapacity"
+    Precision="18"
+    Scale="2"
+    ColumnName="EnginFuelCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Timeconsumptionaverage"
+    IsNotNull="true"
+    Precision="18"
+    Scale="2"
+    ColumnName="TIMECONSUMPTIONAVERAGE"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Distanceconsumptionaverage"
+    IsNotNull="true"
+    ColumnName="DISTANCECONSUMPTIONAVERAGE"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Creationdate"
+    ColumnName="CreationDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Enginetypeid"
+    ColumnName="EngineTypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Enginecapacity"
+    ColumnName="EngineCapacity"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Maingeartypeid"
+    ColumnName="MaingeartypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Maingearcapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="Maingearcapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Secondgeartypeid"
+    ColumnName="SecondGearTypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Secondgearcapacity"
+    Precision="18"
+    Scale="2"
+    ColumnName="SecondGearCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Frontbridgetypeid"
+    ColumnName="FrontbridgeTypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Frontbridgecapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="FrontbridgeCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Midlebridgetypid"
+    ColumnName="MidlebridgetypID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Midlebridgecapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="MidlebridgeCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Backbridgetypeid"
+    ColumnName="BackBridgeTypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Backbridgecapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="BackBridgeCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Steringwheeltypid"
+    ColumnName="SteringwheeltypID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Steringwheelcapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="SteringwheelCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Braketypeid"
+    ColumnName="BraketypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Brakecapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="BrakeCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Flipflopcircuittypeid"
+    ColumnName="FlipflopcircuittypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Flipflopcircuitcapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="FlipflopcircuitCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Coolingcircuittypeid"
+    ColumnName="CoolingcircuittypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Coolingcircuitcapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="CoolingcircuitCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Hidroliccirctypeid"
+    ColumnName="HidroliccirctypeID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Hidroliccirccacacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="HidroliccircCacacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Hastwotags"
+    ColumnName="HasTwoTags"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Milfafcapacity"
+    Precision="10"
+    Scale="2"
+    ColumnName="MilfafCapacity"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    ColumnName="msrepl_tran_version"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Expr1"
+    IsNotNull="true"
+    ColumnName="Expr1"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Fueltypename"
+    ColumnName="FuelTypeName"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Typecolor"
+    Domain="model.EO.TEXT"
+    ColumnName="TypeColor"
+    SQLType="STRUCT"
+    Type="model.EO.common.TEXT"
+    ColumnType="TEXT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Maxdensity"
+    Precision="53"
+    ColumnName="MaxDensity"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Mindensity"
+    Precision="53"
+    ColumnName="MinDensity"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Expr2"
+    IsNotNull="true"
+    ColumnName="Expr2"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Expr3"
+    IsNotNull="true"
+    ColumnName="Expr3"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Typename"
+    ColumnName="TypeName"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Typeid"
+    Precision="53"
+    ColumnName="TypeID"
+    SQLType="FLOAT"
+    Type="java.lang.Float"
+    ColumnType="FLOAT"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Expr4"
+    IsNotNull="true"
+    ColumnName="Expr4"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="OurViewVgVtFt"
+    PrimaryKey="true"/>
+  <Key
+    Name="OurviewvgvtftPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="OurviewvgvtftPrimaryKey"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.Ourviewvgvtft.Id"/>
+      <Item Value="model.EO.Ourviewvgvtft.Groupname"/>
+      <Item Value="model.EO.Ourviewvgvtft.Categoryid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Fueltype"/>
+      <Item Value="model.EO.Ourviewvgvtft.Enginfuelcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Timeconsumptionaverage"/>
+      <Item Value="model.EO.Ourviewvgvtft.Distanceconsumptionaverage"/>
+      <Item Value="model.EO.Ourviewvgvtft.Creationdate"/>
+      <Item Value="model.EO.Ourviewvgvtft.Enginetypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Enginecapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Maingeartypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Maingearcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Secondgeartypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Secondgearcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Frontbridgetypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Frontbridgecapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Midlebridgetypid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Midlebridgecapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Backbridgetypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Backbridgecapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Steringwheeltypid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Steringwheelcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Braketypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Brakecapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Flipflopcircuittypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Flipflopcircuitcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Coolingcircuittypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Coolingcircuitcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Hidroliccirctypeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Hidroliccirccacacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Hastwotags"/>
+      <Item Value="model.EO.Ourviewvgvtft.Milfafcapacity"/>
+      <Item Value="model.EO.Ourviewvgvtft.MsreplTranVersion"/>
+      <Item Value="model.EO.Ourviewvgvtft.Expr1"/>
+      <Item Value="model.EO.Ourviewvgvtft.Fueltypename"/>
+      <Item Value="model.EO.Ourviewvgvtft.Typecolor"/>
+      <Item Value="model.EO.Ourviewvgvtft.Maxdensity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Mindensity"/>
+      <Item Value="model.EO.Ourviewvgvtft.Expr2"/>
+      <Item Value="model.EO.Ourviewvgvtft.Expr3"/>
+      <Item Value="model.EO.Ourviewvgvtft.Typename"/>
+      <Item Value="model.EO.Ourviewvgvtft.Typeid"/>
+      <Item Value="model.EO.Ourviewvgvtft.Expr4"/>
+    </AttrArray>
+  </Key>
+</Entity>

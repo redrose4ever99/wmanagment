@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="groupmanagementtfPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UserGroupForAddView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UserGroupForAddView1Iterator"/>
+    <searchRegion Binds="UserGroupForAddView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="UserGroupForAddView1Query"/>
+    <iterator Binds="GroupDetailForAddView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="GroupDetailForAddView2Iterator"/>
+    <searchRegion Binds="GroupDetailForAddView2Iterator" Criteria="GroupDetailForAddViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="GroupDetailForAddView2Query"/>
+    <searchRegion Criteria="GroupDetailForAddViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="GroupDetailForAddView2Iterator"
+                  id="GroupDetailForAddViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UserGroupForAddView1Iterator" id="GroupName">
+      <AttrNames>
+        <Item Value="GroupName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UserGroupForAddView1Iterator" id="GroupNotice">
+      <AttrNames>
+        <Item Value="GroupNotice"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="UserGroupForAddView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="UserGroupForAddView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="UserGroupForAddView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="UserGroupForAddView1Iterator" id="UserGroupForAddView1">
+      <nodeDefinition DefName="model.VO.UserGroupForAddView" Name="UserGroupForAddView10">
+        <AttrNames>
+          <Item Value="GroupName"/>
+          <Item Value="GroupNotice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="GroupDetailForAddView2Iterator" id="GroupDetailForAddView2">
+      <nodeDefinition DefName="model.VO.GroupDetailForAddView" Name="GroupDetailForAddView20">
+        <AttrNames>
+          <Item Value="RoleName"/>
+          <Item Value="RoleStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="GroupDetailForAddView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <attributeValues IterBinding="UserGroupForAddView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

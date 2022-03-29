@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProgramNconversionsRoot"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PROGRAM_NCONVERSIONS"
+  AliasName="ProgramNconversionsRoot"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="TableName"
+    IsNotNull="true"
+    ColumnName="TABLE_NAME"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="PROGRAM_NCONVERSIONS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Encoded"
+    IsNotNull="true"
+    ColumnName="ENCODED"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="PROGRAM_NCONVERSIONS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Decoded"
+    ColumnName="DECODED"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="PROGRAM_NCONVERSIONS"/>
+  <Attribute
+    Name="TableNameDecode"
+    ColumnName="TABLE_NAME_DECODE"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="PROGRAM_NCONVERSIONS"/>
+  <Key
+    Name="PKPROGRAMNCONVERSIONS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_PROGRAM_NCONVERSIONS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.ProgramNconversionsRoot.TableName"/>
+      <Item Value="model.EO.ProgramNconversionsRoot.Encoded"/>
+    </AttrArray>
+  </Key>
+</Entity>

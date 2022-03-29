@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VehiclesForAddView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="OurviewvgvtftView1"
+    ViewObjectName="model.VO.OurviewvgvtftView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="FuletypesForGetView1"
+    ViewObjectName="model.VO.FuletypesForGetView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OurviewdivunitView1"
+    ViewObjectName="model.VO.OurviewdivunitView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vehiclemodel"
+    ListVOName="OurviewvgvtftView1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vehiclemodel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Vehicledesciption"/>
+      <Item Value="Fueltype"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Expr3"/>
+      <Item Value="Groupname"/>
+      <Item Value="Fueltype"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Typename"/>
+      <Item Value="Groupname"/>
+      <Item Value="Fueltypename"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="OurviewvgvtftViewCriteria"
+      Hint="showAndExecute"/>
+    <ViewCriteriaUsage
+      Name="OurviewvgvtftViewCriteria"
+      FullName="model.VO.OurviewvgvtftView.OurviewvgvtftViewCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Fueltype"
+    ListVOName="FuletypesForGetView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Fueltype"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Fueltypename"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Divisionid"
+    ListVOName="OurviewdivunitView1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Divisionid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DTittle"/>
+      <Item Value="STitle"/>
+      <Item Value="UTitle"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="OurviewdivunitViewCriteria"
+      Hint="showAndExecute"/>
+    <ViewCriteriaUsage
+      Name="OurviewdivunitViewCriteria"
+      FullName="model.VO.OurviewdivunitView.OurviewdivunitViewCriteria"/>
+  </ListBinding>
+  <EntityUsage
+    Name="VehiclesForAdd"
+    Entity="model.EO.VehiclesForAdd"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="VehiclesForAdd"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vehicleplateno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Vehicleplateno"
+    EntityUsage="VehiclesForAdd"
+    AliasName="VehiclePlateNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Vehicleplateno_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cardno"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Cardno"
+    EntityUsage="VehiclesForAdd"
+    AliasName="CardNo">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Cardno_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Vehicledesciption"
+    PrecisionRule="true"
+    EntityAttrName="Vehicledesciption"
+    EntityUsage="VehiclesForAdd"
+    AliasName="VehicleDesciption">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Vehicledesciption_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Vehiclemodel"
+    PrecisionRule="true"
+    EntityAttrName="Vehiclemodel"
+    EntityUsage="VehiclesForAdd"
+    AliasName="VehicleModel"
+    LOVName="LOV_Vehiclemodel">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Vehiclemodel_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Fueltype"
+    PrecisionRule="true"
+    EntityAttrName="Fueltype"
+    EntityUsage="VehiclesForAdd"
+    AliasName="FuelType"
+    LOVName="LOV_Fueltype">
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Fueltype_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Quota"
+    PrecisionRule="true"
+    EntityAttrName="Quota"
+    EntityUsage="VehiclesForAdd"
+    AliasName="Quota">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Quota_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Divisionid"
+    PrecisionRule="true"
+    EntityAttrName="Divisionid"
+    EntityUsage="VehiclesForAdd"
+    AliasName="DivisionID"
+    LOVName="LOV_Divisionid">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Divisionid_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Originalquotaid"
+    PrecisionRule="true"
+    EntityAttrName="Originalquotaid"
+    EntityUsage="VehiclesForAdd"
+    AliasName="OriginalQuotaID"
+    DefaultValue="0">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Originalquotaid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Notes"
+    PrecisionRule="true"
+    EntityAttrName="Notes"
+    EntityUsage="VehiclesForAdd"
+    AliasName="Notes">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Notes_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Creationdate"
+    PrecisionRule="true"
+    EntityAttrName="Creationdate"
+    EntityUsage="VehiclesForAdd"
+    AliasName="CreationDate">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Creationdate_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Automationratio"
+    PrecisionRule="true"
+    EntityAttrName="Automationratio"
+    EntityUsage="VehiclesForAdd"
+    AliasName="AutomationRatio">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Automationratio_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Lastupdatedate"
+    PrecisionRule="true"
+    EntityAttrName="Lastupdatedate"
+    EntityUsage="VehiclesForAdd"
+    AliasName="LastUpdateDate">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Lastupdatedate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Planapprovedivid"
+    PrecisionRule="true"
+    EntityAttrName="Planapprovedivid"
+    EntityUsage="VehiclesForAdd"
+    AliasName="PlanApproveDivID"
+    DefaultValue="6666">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.VehiclesForAddView.Planapprovedivid_LABEL"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MsreplTranVersion"
+    EntityUsage="VehiclesForAdd"
+    AliasName="msrepl_tran_version"
+    DefaultValue="50E97DE8-2584-41DD-9F88-24C13D1735FD">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

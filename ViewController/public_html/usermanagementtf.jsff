@@ -1,0 +1,705 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_usermanagementtf.psl1}" inlineStyle="height:750px;" dimensionsFrom="children"
+                           styleClass="AFStretchWidth ">
+        <f:facet name="center">
+            <af:panelBox id="pb1" binding="#{backingBeanScope.backing_usermanagementtf.pb1}"
+                         background="light" titleHalign="center" showDisclosure="false" ramp="highlight">
+                <f:facet name="toolbar"/>
+                <af:panelBox id="pb2" binding="#{backingBeanScope.backing_usermanagementtf.pb2}" showDisclosure="false"
+                             background="light">
+                    <f:facet name="toolbar"/>
+                    <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_usermanagementtf.pgl1}"
+                                        dimensionsFrom="children">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                                    binding="#{backingBeanScope.backing_usermanagementtf.gr1}">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"
+                                         binding="#{backingBeanScope.backing_usermanagementtf.gc1}" halign="center">
+                                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                                     binding="#{backingBeanScope.backing_usermanagementtf.pgl2}"
+                                                     inlineStyle="width:1243px;" halign="center">
+                                    <af:panelHeader text="اختر معامل البحث" id="ph1"
+                                                    binding="#{backingBeanScope.backing_usermanagementtf.ph1}">
+                                        <af:query id="qryId1" headerText="بحث" disclosed="true"
+                                                  value="#{bindings.UsersForAddNewUserViewCriteriaQuery.queryDescriptor}"
+                                                  model="#{bindings.UsersForAddNewUserViewCriteriaQuery.queryModel}"
+                                                  queryListener="#{bindings.UsersForAddNewUserViewCriteriaQuery.processQuery}"
+                                                  queryOperationListener="#{bindings.UsersForAddNewUserViewCriteriaQuery.processQueryOperation}"
+                                                  resultComponentId="::pc1:resId1"
+                                                  binding="#{backingBeanScope.backing_usermanagementtf.qryId1}"
+                                                  saveQueryMode="hidden"/>
+                                    </af:panelHeader>
+                                    <af:panelBox text="نتائج البحث" id="pb3"
+                                                 binding="#{backingBeanScope.backing_usermanagementtf.pb3}" background="light" showDisclosure="false"
+                                                 titleHalign="start">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelCollection id="pc1"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pc1}"
+                                                            defaultToolbarItemDisplay="icon"
+                                                            inlineStyle="width:1211px;">
+                                            <f:facet name="menus"/>
+                                            <f:facet name="toolbar"/>
+                                            <f:facet name="statusbar"/>
+                                            <af:table value="#{bindings.UsersForAddNewUserView1.collectionModel}"
+                                                      var="row" rows="#{bindings.UsersForAddNewUserView1.rangeSize}"
+                                                      emptyText="لايوجد بيانات" rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.UsersForAddNewUserView1.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.UsersForAddNewUserView1.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.UsersForAddNewUserView1.rangeSize}"
+                                                      filterModel="#{bindings.UsersForAddNewUserViewCriteriaQuery.queryDescriptor}"
+                                                      filterVisible="true"
+                                                      queryListener="#{bindings.UsersForAddNewUserViewCriteriaQuery.processQuery}"
+                                                      varStatus="vs" id="resId1"
+                                                      binding="#{backingBeanScope.backing_usermanagementtf.resId1}"
+                                                      partialTriggers=":::b1 :::b3 :::b4 :::b5 :::b6 :::b8">
+                                                <af:column id="c1" inlineStyle="font-weight:bold;" align="center"
+                                                           headerText="م" width="20">
+                                                    <af:outputText value="#{vs.index+1}" id="ot7"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.UserFullName.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.UserFullName.label}"
+                                                           id="resId1c1" align="center" inlineStyle="font-weight:bold;"
+                                                           width="150">
+                                                    <af:outputText value="#{row.UserFullName}"
+                                                                   shortDesc="#{bindings.UsersForAddNewUserView1.hints.UserFullName.tooltip}"
+                                                                   id="ot1"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.UserName.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.UserName.label}"
+                                                           id="resId1c2" align="center" inlineStyle="font-weight:bold;"
+                                                           width="120">
+                                                    <af:outputText value="#{row.UserName}"
+                                                                   shortDesc="#{bindings.UsersForAddNewUserView1.hints.UserName.tooltip}"
+                                                                   id="ot2"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.UserPart.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.UserPart.label}"
+                                                           id="resId1c3" align="center" inlineStyle="font-weight:bold;"
+                                                           width="120">
+                                                    <af:selectOneChoice value="#{row.bindings.UserPart.inputValue}"
+                                                                        label="#{row.bindings.UserPart.label}"
+                                                                        required="#{bindings.UsersForAddNewUserView1.hints.UserPart.mandatory}"
+                                                                        shortDesc="#{bindings.UsersForAddNewUserView1.hints.UserPart.tooltip}"
+                                                                        readOnly="true" id="soc1"
+                                                                        inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                        contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                        <f:selectItems value="#{row.bindings.UserPart.items}" id="si1"/>
+                                                        <f:validator binding="#{row.bindings.UserPart.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.UserPurview.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.UserPurview.label}"
+                                                           id="resId1c4" align="center" inlineStyle="font-weight:bold;"
+                                                           width="120">
+                                                    <af:selectOneChoice value="#{row.bindings.UserPurview.inputValue}"
+                                                                        label="#{row.bindings.UserPurview.label}"
+                                                                        required="#{bindings.UsersForAddNewUserView1.hints.UserPurview.mandatory}"
+                                                                        shortDesc="#{bindings.UsersForAddNewUserView1.hints.UserPurview.tooltip}"
+                                                                        readOnly="true" id="soc2"
+                                                                        inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                        contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                        <f:selectItems value="#{row.bindings.UserPurview.items}"
+                                                                       id="si2"/>
+                                                        <f:validator binding="#{row.bindings.UserPurview.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.AcountState.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.AcountState.label}"
+                                                           id="resId1c5" align="center" inlineStyle="font-weight:bold;">
+                                                    <af:selectOneChoice value="#{row.bindings.AcountState.inputValue}"
+                                                                        label="#{row.bindings.AcountState.label}"
+                                                                        required="#{bindings.UsersForAddNewUserView1.hints.AcountState.mandatory}"
+                                                                        shortDesc="#{bindings.UsersForAddNewUserView1.hints.AcountState.tooltip}"
+                                                                        readOnly="true" id="soc3"
+                                                                        inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                        contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                        <f:selectItems value="#{row.bindings.AcountState.items}"
+                                                                       id="si3"/>
+                                                        <f:validator binding="#{row.bindings.AcountState.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.IpIddress.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.IpIddress.label}"
+                                                           id="resId1c6" align="center" inlineStyle="font-weight:bold;">
+                                                    <af:outputText value="#{row.IpIddress}"
+                                                                   shortDesc="#{bindings.UsersForAddNewUserView1.hints.IpIddress.tooltip}"
+                                                                   id="ot3"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.UserCity.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.UserCity.label}"
+                                                           id="resId1c7" align="center" inlineStyle="font-weight:bold;">
+                                                    <af:selectOneChoice value="#{row.bindings.UserCity.inputValue}"
+                                                                        label="#{row.bindings.UserCity.label}"
+                                                                        required="#{bindings.UsersForAddNewUserView1.hints.UserCity.mandatory}"
+                                                                        shortDesc="#{bindings.UsersForAddNewUserView1.hints.UserCity.tooltip}"
+                                                                        readOnly="true" id="soc4"
+                                                                        inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                        contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                        <f:selectItems value="#{row.bindings.UserCity.items}" id="si4"/>
+                                                        <f:validator binding="#{row.bindings.UserCity.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.EnteredDate.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.EnteredDate.label}"
+                                                           id="resId1c8" align="center" inlineStyle="font-weight:bold;">
+                                                    <f:facet name="filter">
+                                                        <af:inputDate value="#{bindings.UsersForAddNewUserViewCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.EnteredDate.value}"
+                                                                      id="id1"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.id1}">
+                                                            <af:convertDateTime pattern="#{bindings.UsersForAddNewUserView1.hints.EnteredDate.format}"/>
+                                                        </af:inputDate>
+                                                    </f:facet>
+                                                    <af:outputText value="#{row.EnteredDate}"
+                                                                   shortDesc="#{bindings.UsersForAddNewUserView1.hints.EnteredDate.tooltip}"
+                                                                   id="ot4"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                        <af:convertDateTime pattern="#{bindings.UsersForAddNewUserView1.hints.EnteredDate.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.UsersForAddNewUserView1.hints.EnteredUser.name}"
+                                                           filterable="true" sortable="true"
+                                                           headerText="#{bindings.UsersForAddNewUserView1.hints.EnteredUser.label}"
+                                                           id="resId1c9" align="center" inlineStyle="font-weight:bold;">
+                                                    <af:outputText value="#{row.EnteredUser}"
+                                                                   shortDesc="#{bindings.UsersForAddNewUserView1.hints.EnteredUser.tooltip}"
+                                                                   id="ot5"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                </af:column>
+                                            </af:table>
+                                        </af:panelCollection>
+                                    </af:panelBox>
+                                    <af:panelBox text="بيانات المستخدم" id="pb4"
+                                                 binding="#{backingBeanScope.backing_usermanagementtf.pb4}"
+                                                 inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                                                 contentStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                                                 background="light" showDisclosure="false">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelGridLayout id="pgl3"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pgl3}"
+                                                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2"
+                                                        binding="#{backingBeanScope.backing_usermanagementtf.gr2}">
+                                                <af:gridCell marginStart="5px" width="25%" id="gc2"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc2}">
+                                                    <af:panelFormLayout id="pfl1"
+                                                                        binding="#{backingBeanScope.backing_usermanagementtf.pfl1}"
+                                                                        partialTriggers="qryId1 ph1 pc1:resId1 pc1">
+                                                        <f:facet name="footer"/>
+                                                        <af:inputText value="#{bindings.UserFullName.inputValue}"
+                                                                      label="#{bindings.UserFullName.hints.label}"
+                                                                      required="#{bindings.UserFullName.hints.mandatory}"
+                                                                      columns="#{bindings.UserFullName.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.UserFullName.hints.precision}"
+                                                                      shortDesc="#{bindings.UserFullName.hints.tooltip}"
+                                                                      id="it1"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.it1}"
+                                                                      inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <f:validator binding="#{bindings.UserFullName.validator}"/>
+                                                        </af:inputText>
+                                                        <af:selectOneChoice value="#{bindings.UserPart.inputValue}"
+                                                                            label="#{bindings.UserPart.label}"
+                                                                            required="#{bindings.UserPart.hints.mandatory}"
+                                                                            shortDesc="#{bindings.UserPart.hints.tooltip}"
+                                                                            id="soc5"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.soc5}"
+                                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <f:selectItems value="#{bindings.UserPart.items}" id="si5"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.si5}"/>
+                                                            <f:validator binding="#{bindings.UserPart.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:panelFormLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="25%" id="gc3"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc3}">
+                                                    <af:panelFormLayout id="pfl2"
+                                                                        binding="#{backingBeanScope.backing_usermanagementtf.pfl2}"
+                                                                        partialTriggers="qryId1 ph1 pc1:resId1 pc1">
+                                                        <f:facet name="footer"/>
+                                                        <af:inputText value="#{bindings.UserName.inputValue}"
+                                                                      label="#{bindings.UserName.hints.label}"
+                                                                      required="#{bindings.UserName.hints.mandatory}"
+                                                                      columns="#{bindings.UserName.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.UserName.hints.precision}"
+                                                                      shortDesc="#{bindings.UserName.hints.tooltip}"
+                                                                      id="it6"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.it6}"
+                                                                      contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      autoSubmit="true">
+                                                            <f:validator binding="#{bindings.UserName.validator}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.UserPassword.inputValue}"
+                                                                      label="#{bindings.UserPassword.hints.label}"
+                                                                      required="#{bindings.UserPassword.hints.mandatory}"
+                                                                      columns="#{bindings.UserPassword.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.UserPassword.hints.precision}"
+                                                                      shortDesc="#{bindings.UserPassword.hints.tooltip}"
+                                                                      id="it2"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.it2}"
+                                                                      inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      secret="true">
+                                                            <f:validator binding="#{bindings.UserPassword.validator}"/>
+                                                        </af:inputText>
+                                                    </af:panelFormLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="25%" id="gc4"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc4}">
+                                                    <af:panelFormLayout id="pfl3"
+                                                                        binding="#{backingBeanScope.backing_usermanagementtf.pfl3}"
+                                                                        partialTriggers="qryId1 ph1 pc1:resId1 pc1">
+                                                        <f:facet name="footer"/>
+                                                        <af:inputText value="#{bindings.IpIddress.inputValue}"
+                                                                      label="#{bindings.IpIddress.hints.label}"
+                                                                      required="#{bindings.IpIddress.hints.mandatory}"
+                                                                      columns="#{bindings.IpIddress.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.IpIddress.hints.precision}"
+                                                                      shortDesc="#{bindings.IpIddress.hints.tooltip}"
+                                                                      id="it3"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.it3}"
+                                                                      inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <f:validator binding="#{bindings.IpIddress.validator}"/>
+                                                        </af:inputText>
+                                                        <af:selectOneChoice value="#{bindings.AcountState.inputValue}"
+                                                                            label="#{bindings.AcountState.label}"
+                                                                            required="#{bindings.AcountState.hints.mandatory}"
+                                                                            shortDesc="#{bindings.AcountState.hints.tooltip}"
+                                                                            id="soc7"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.soc7}"
+                                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <f:selectItems value="#{bindings.AcountState.items}"
+                                                                           id="si7"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.si7}"/>
+                                                            <f:validator binding="#{bindings.AcountState.validator}"/>
+                                                        </af:selectOneChoice>
+                                                    </af:panelFormLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc5"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc5}">
+                                                    <af:panelFormLayout id="pfl4"
+                                                                        binding="#{backingBeanScope.backing_usermanagementtf.pfl4}"
+                                                                        partialTriggers="qryId1 ph1 pc1:resId1 pc1">
+                                                        <f:facet name="footer"/>
+                                                        <af:selectOneChoice value="#{bindings.UserCity.inputValue}"
+                                                                            label="#{bindings.UserCity.label}"
+                                                                            required="#{bindings.UserCity.hints.mandatory}"
+                                                                            shortDesc="#{bindings.UserCity.hints.tooltip}"
+                                                                            id="soc6"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.soc6}"
+                                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <f:selectItems value="#{bindings.UserCity.items}" id="si6"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.si6}"/>
+                                                            <f:validator binding="#{bindings.UserCity.validator}"/>
+                                                        </af:selectOneChoice>
+                                                        <af:selectOneChoice value="#{bindings.UserPurview.inputValue}"
+                                                                            label="#{bindings.UserPurview.label}"
+                                                                            required="#{bindings.UserPurview.hints.mandatory}"
+                                                                            shortDesc="#{bindings.UserPurview.hints.tooltip}"
+                                                                            id="soc8"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.soc8}"
+                                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <f:selectItems value="#{bindings.UserPurview.items}"
+                                                                           id="si8"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.si8}"/>
+                                                            <f:validator binding="#{bindings.UserPurview.validator}"/>
+                                                        </af:selectOneChoice>
+                                                        <af:inputText value="#{bindings.EnteredDate.inputValue}"
+                                                                      label="#{bindings.EnteredDate.hints.label}"
+                                                                      required="#{bindings.EnteredDate.hints.mandatory}"
+                                                                      columns="#{bindings.EnteredDate.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.EnteredDate.hints.precision}"
+                                                                      shortDesc="#{bindings.EnteredDate.hints.tooltip}"
+                                                                      id="it4"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.it4}"
+                                                                      visible="false">
+                                                            <f:validator binding="#{bindings.EnteredDate.validator}"/>
+                                                            <af:convertDateTime pattern="#{bindings.EnteredDate.format}"/>
+                                                        </af:inputText>
+                                                        <af:inputText value="#{bindings.EnteredUser.inputValue}"
+                                                                      label="#{bindings.EnteredUser.hints.label}"
+                                                                      required="#{bindings.EnteredUser.hints.mandatory}"
+                                                                      columns="#{bindings.EnteredUser.hints.displayWidth}"
+                                                                      maximumLength="#{bindings.EnteredUser.hints.precision}"
+                                                                      shortDesc="#{bindings.EnteredUser.hints.tooltip}"
+                                                                      id="it5"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.it5}"
+                                                                      visible="false">
+                                                            <f:validator binding="#{bindings.EnteredUser.validator}"/>
+                                                        </af:inputText>
+                                                        <af:panelLabelAndMessage label="#{bindings.Id.hints.label}"
+                                                                                 id="plam1"
+                                                                                 binding="#{backingBeanScope.backing_usermanagementtf.plam1}"
+                                                                                 visible="false">
+                                                            <af:outputText value="#{bindings.Id.inputValue}"
+                                                                           shortDesc="#{bindings.Id.hints.tooltip}"
+                                                                           id="ot6"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.ot6}">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Id.format}"/>
+                                                            </af:outputText>
+                                                        </af:panelLabelAndMessage>
+                                                    </af:panelFormLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:panelGridLayout id="pgl4"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pgl4}"
+                                                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3"
+                                                        binding="#{backingBeanScope.backing_usermanagementtf.gr3}">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc6}"
+                                                             halign="center">
+                                                    <af:button
+                                                               text="مستخدم جديد"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b1}"
+                                                               icon="/images/new.png"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.new_user}"/>
+                                                    <af:button text="حفظ" id="b2"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b2}"
+                                                               icon="/images/save.png"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.b2_action}"/>
+                                                    <af:button id="b7"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b7}"
+                                                               text="إضافة الصلاحيات الجديدة" icon="/images/new.png"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.AddNewRoleToUser}"/>
+                                                    <af:button
+                                                               text="Execute" disabled="#{!bindings.Execute.enabled}"
+                                                               id="b3"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b3}"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.RoleExecute}"
+                                                               visible="false"/>
+                                                    <af:button actionListener="#{bindings.Delete.execute}" text="حذف"
+                                                               disabled="#{!bindings.Delete.enabled}" id="b4"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b4}"
+                                                               icon="/images/deletebtn.png"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               rendered="false"/>
+                                                    <af:button text="Commit"
+                                                               disabled="#{!bindings.Commit.enabled}" id="b5"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b5}"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.Commit_user}"
+                                                               visible="false"/>
+                                                    <af:button
+                                                               text="تراجع" disabled="#{!bindings.Rollback.enabled}"
+                                                               immediate="true" id="b6"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b6}"
+                                                               icon="/images/back.png"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.roll}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                    <af:button
+                                                               text="Execute" disabled="#{!bindings.Execute.enabled}"
+                                                               id="b8"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b8}"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.Refresh_user}"
+                                                               visible="false"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:panelBox>
+                                    <af:panelBox id="pb5"
+                                                 binding="#{backingBeanScope.backing_usermanagementtf.pb5}"
+                                                 background="light" showDisclosure="false">
+                                        <af:panelGridLayout id="pgl6"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pgl6}"
+                                                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5"
+                                                        binding="#{backingBeanScope.backing_usermanagementtf.gr5}">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc8}"
+                                                             halign="center">
+                                                    <af:panelGroupLayout layout="vertical" id="pgl7"
+                                                                         binding="#{backingBeanScope.backing_usermanagementtf.pgl7}">
+                                                        <af:panelHeader text="اختر معامل البحث" id="ph2"
+                                                                        binding="#{backingBeanScope.backing_usermanagementtf.ph2}">
+                                                            <af:query id="qryId2" headerText="بحث" disclosed="true"
+                                                                      value="#{bindings.UserRoleWithUserForEditViewCriteriaQuery.queryDescriptor}"
+                                                                      model="#{bindings.UserRoleWithUserForEditViewCriteriaQuery.queryModel}"
+                                                                      queryListener="#{bindings.UserRoleWithUserForEditViewCriteriaQuery.processQuery}"
+                                                                      queryOperationListener="#{bindings.UserRoleWithUserForEditViewCriteriaQuery.processQueryOperation}"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.qryId2}"
+                                                                      saveQueryMode="hidden"
+                                                                      resultComponentId="::pc2:t2"/>
+                                                        </af:panelHeader>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:panelGridLayout id="pgl8"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pgl8}"
+                                                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6"
+                                                        binding="#{backingBeanScope.backing_usermanagementtf.gr6}">
+                                                <af:gridCell marginStart="5px" id="gc9"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc9}">
+                                                    <af:panelGroupLayout id="pgl9"
+                                                                         binding="#{backingBeanScope.backing_usermanagementtf.pgl9}"
+                                                                         layout="vertical" valign="middle"
+                                                                         halign="center">
+                                                        <af:outputText value="الصلاحيات الإفرادية" id="ot13"
+                                                                       binding="#{backingBeanScope.backing_usermanagementtf.ot13}"
+                                                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                        <af:spacer id="s4"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.s4}"/>
+                                                        <af:panelCollection id="pc2"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.pc2}"
+                                                                            inlineStyle="width:768px; height:280px;"
+                                                                            defaultToolbarItemDisplay="icon"
+                                                                            featuresOff="statusBar">
+                                                            <f:facet name="menus"/>
+                                                            <f:facet name="toolbar"/>
+                                                            <f:facet name="statusbar"/>
+                                                            <af:table value="#{bindings.UserRoleWithUserForEditView21.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.UserRoleWithUserForEditView21.rangeSize}"
+                                                                      emptyText="لايوجد صلاحيات ممنوحة"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.UserRoleWithUserForEditView21.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.UserRoleWithUserForEditView21.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.UserRoleWithUserForEditView21.rangeSize}"
+                                                                      filterModel="#{bindings.UserRoleWithUserForEditViewCriteriaQuery.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.UserRoleWithUserForEditViewCriteriaQuery.processQuery}"
+                                                                      varStatus="vs" id="t2"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.t2}"
+                                                                      partialTriggers=":::qryId1 :::ph1 :::ph2 :::qryId2 :::b9">
+                                                                <af:column id="c4" inlineStyle="font-weight:bold;"
+                                                                           align="center" headerText="م" width="20">
+                                                                    <af:outputText value="#{vs.index+1}" id="ot10"
+                                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.UserRoleWithUserForEditView21.hints.RoleDescriptionFrom.name}"
+                                                                           sortable="true"
+                                                                           headerText="#{bindings.UserRoleWithUserForEditView21.hints.RoleDescriptionFrom.label}"
+                                                                           filterable="true" id="c5"
+                                                                           inlineStyle="font-weight:bold;"
+                                                                           align="center" width="300">
+                                                                    <af:outputText value="#{row.RoleDescriptionFrom}"
+                                                                                   shortDesc="#{bindings.UserRoleWithUserForEditView21.hints.RoleDescriptionFrom.tooltip}"
+                                                                                   id="ot11"
+                                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.UserRoleWithUserForEditView21.hints.RoleStatus.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="#{bindings.UserRoleWithUserForEditView21.hints.RoleStatus.label}"
+                                                                           id="c6" inlineStyle="font-weight:bold;"
+                                                                           align="center">
+                                                                    <af:selectOneChoice value="#{row.bindings.RoleStatus.inputValue}"
+                                                                                        label="#{row.bindings.RoleStatus.label}"
+                                                                                        required="#{bindings.UserRoleWithUserForEditView21.hints.RoleStatus.mandatory}"
+                                                                                        shortDesc="#{bindings.UserRoleWithUserForEditView21.hints.RoleStatus.tooltip}"
+                                                                                        id="soc10"
+                                                                                        inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                                        contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                                        <f:selectItems value="#{row.bindings.RoleStatus.items}"
+                                                                                       id="si10"/>
+                                                                        <f:validator binding="#{row.bindings.RoleStatus.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>
+                                                        </af:panelCollection>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc10"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc10}">
+                                                    <af:panelGroupLayout id="pgl10"
+                                                                         binding="#{backingBeanScope.backing_usermanagementtf.pgl10}"
+                                                                         layout="vertical" valign="middle"
+                                                                         halign="center">
+                                                        <af:outputText value="مجموعات الصلاحيات الممنوحة" id="ot14"
+                                                                       binding="#{backingBeanScope.backing_usermanagementtf.ot14}"
+                                                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                        <af:spacer id="s5"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.s5}"/>
+                                                        <af:panelCollection id="pc3"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.pc3}"
+                                                                            defaultToolbarItemDisplay="icon"
+                                                                            inlineStyle="height:280px; width:429px;"
+                                                                            featuresOff="statusBar">
+                                                            <f:facet name="menus"/>
+                                                            <f:facet name="toolbar"/>
+                                                            <f:facet name="statusbar"/>
+                                                            <af:table value="#{bindings.UserGroupAddedForAddView2.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.UserGroupAddedForAddView2.rangeSize}"
+                                                                      emptyText="لايوجد صلاحيات ممنوجة"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.UserGroupAddedForAddView2.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.UserGroupAddedForAddView2.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.UserGroupAddedForAddView2.rangeSize}"
+                                                                      filterModel="#{bindings.UserGroupAddedForAddView2Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.UserGroupAddedForAddView2Query.processQuery}"
+                                                                      varStatus="vs" id="t1"
+                                                                      binding="#{backingBeanScope.backing_usermanagementtf.t1}"
+                                                                      partialTriggers=":::ph1 :::qryId1">
+                                                                <af:column id="c3" inlineStyle="font-weight:bold;"
+                                                                           align="center" headerText="م" width="20">
+                                                                    <af:outputText value="#{vs.index+1}" id="ot12"
+                                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.UserGroupAddedForAddView2.hints.GroupNameFrom.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="#{bindings.UserGroupAddedForAddView2.hints.GroupNameFrom.label}"
+                                                                           id="c2" inlineStyle="font-weight:bold;"
+                                                                           width="380" align="center">
+                                                                    <af:outputText value="#{row.GroupNameFrom}"
+                                                                                   shortDesc="#{bindings.UserGroupAddedForAddView2.hints.GroupNameFrom.tooltip}"
+                                                                                   id="ot9"
+                                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                                </af:column>
+                                                            </af:table>
+                                                        </af:panelCollection>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:panelGridLayout id="pgl11"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pgl11}"
+                                                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7"
+                                                        binding="#{backingBeanScope.backing_usermanagementtf.gr7}">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc11}"
+                                                             halign="center">
+                                                    <af:button
+                                                               text="حفظ" disabled="#{!bindings.Execute1.enabled}"
+                                                               id="b9"
+                                                               binding="#{backingBeanScope.backing_usermanagementtf.b9}"
+                                                               icon="/images/save.png"
+                                                               action="#{backingBeanScope.backing_usermanagementtf.ExeGiveRoll}"
+                                                               inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:panelGridLayout id="pgl12"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.pgl12}"
+                                                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr8"
+                                                        binding="#{backingBeanScope.backing_usermanagementtf.gr8}">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12"
+                                                             binding="#{backingBeanScope.backing_usermanagementtf.gc12}"
+                                                             halign="center">
+                                                    <af:panelGroupLayout id="pgl13"
+                                                                         binding="#{backingBeanScope.backing_usermanagementtf.pgl13}"
+                                                                         layout="horizontal" halign="center">
+                                                        <af:selectOneChoice value="#{bindings.UserGroupForAddView1.inputValue}"
+                                                                            label="#{bindings.UserGroupForAddView1.label}"
+                                                                            required="#{bindings.UserGroupForAddView1.hints.mandatory}"
+                                                                            shortDesc="#{bindings.UserGroupForAddView1.hints.tooltip}"
+                                                                            id="soc9"
+                                                                            binding="#{backingBeanScope.backing_usermanagementtf.soc9}"
+                                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                            autoSubmit="true">
+                                                            <f:selectItems value="#{bindings.UserGroupForAddView1.items}"
+                                                                           id="si9"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.si9}"/>
+                                                            <f:validator binding="#{bindings.UserGroupForAddView1.validator}"/>
+                                                        </af:selectOneChoice>
+                                                        <af:spacer id="s1"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.s1}"
+                                                                   height="10" width="30"/>
+                                                        <af:panelLabelAndMessage label="#{bindings.Id1.hints.label}"
+                                                                                 id="plam3"
+                                                                                 binding="#{backingBeanScope.backing_usermanagementtf.plam3}"
+                                                                                 partialTriggers="soc9" visible="false">
+                                                            <af:outputText value="#{bindings.Id1.inputValue}"
+                                                                           shortDesc="#{bindings.Id1.hints.tooltip}"
+                                                                           id="ot15"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.ot15}">
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.Id1.format}"/>
+                                                            </af:outputText>
+                                                        </af:panelLabelAndMessage>
+                                                        <af:button text="منح" id="b10"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.b10}"
+                                                                   icon="/images/save.png"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                   action="#{backingBeanScope.backing_usermanagementtf.GrandGroupToUser}"/>
+                                                        <af:spacer id="s2"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.s2}"
+                                                                   height="10" width="10"/>
+                                                        <af:button text="سحب" id="b11"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.b11}"
+                                                                   icon="/images/save.png"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                   action="#{backingBeanScope.backing_usermanagementtf.RevokeGroupFromUser}"/>
+                                                        <af:spacer id="s3"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.s3}"
+                                                                   height="10" width="10"/>
+                                                        <af:button text="سحب كافة الصلاحيات" id="b12"
+                                                                   binding="#{backingBeanScope.backing_usermanagementtf.b12}"
+                                                                   icon="/images/save.png"
+                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                   rendered="false"/>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <f:facet name="toolbar">
+                                            <af:panelGridLayout id="pgl5"
+                                                                binding="#{backingBeanScope.backing_usermanagementtf.pgl5}"
+                                                                inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4"
+                                                            binding="#{backingBeanScope.backing_usermanagementtf.gr4}">
+                                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px"
+                                                                 id="gc7"
+                                                                 binding="#{backingBeanScope.backing_usermanagementtf.gc7}"
+                                                                 halign="center">
+                                                        <af:panelLabelAndMessage label="#{bindings.UserFullName.hints.label}:"
+                                                                                 id="plam2"
+                                                                                 binding="#{backingBeanScope.backing_usermanagementtf.plam2}"
+                                                                                 partialTriggers="ph1 qryId1 pc1 pc1:resId1"
+                                                                                 labelStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                                            <af:outputText value="#{bindings.UserFullName.inputValue}"
+                                                                           shortDesc="#{bindings.UserFullName.hints.tooltip}"
+                                                                           id="ot8"
+                                                                           binding="#{backingBeanScope.backing_usermanagementtf.ot8}"
+                                                                           inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                        </af:panelLabelAndMessage>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            </af:panelGridLayout>
+                                        </f:facet>
+                                    </af:panelBox>
+                                </af:panelGroupLayout>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:panelBox>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_usermanagementtf-->
+</ui:composition>

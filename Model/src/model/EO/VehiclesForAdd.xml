@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VehiclesForAdd"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="Vehicles"
+  AliasName="VehiclesForAdd"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Vehicleplateno"
+    IsNotNull="true"
+    ColumnName="VehiclePlateNo"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Cardno"
+    IsUnique="true"
+    ColumnName="CardNo"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Vehicledesciption"
+    ColumnName="VehicleDesciption"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Vehiclemodel"
+    ColumnName="VehicleModel"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Fueltype"
+    ColumnName="FuelType"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Quota"
+    ColumnName="Quota"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Divisionid"
+    ColumnName="DivisionID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Originalquotaid"
+    ColumnName="OriginalQuotaID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Notes"
+    ColumnName="Notes"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NVARCHAR"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Creationdate"
+    ColumnName="CreationDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Automationratio"
+    ColumnName="AutomationRatio"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Lastupdatedate"
+    ColumnName="LastUpdateDate"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="DATETIME"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="Planapprovedivid"
+    ColumnName="PlanApproveDivID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="Vehicles"/>
+  <Attribute
+    Name="MsreplTranVersion"
+    ColumnName="msrepl_tran_version"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="Vehicles"/>
+  <Key
+    Name="PKVehicles1EC48A19"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK__Vehicles__1EC48A19"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.VehiclesForAdd.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UQVehicles1CDC41A7">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UQ__Vehicles__1CDC41A7"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.VehiclesForAdd.Cardno"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FKVehiclesFuleTypes">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_FuleTypes"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_Vehicles_FuleTypes"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.VehiclesForAdd.Fueltype"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FKVehiclesPlateNo">
+    <DesignTime>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_Vehicles_PlateNo"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.VehiclesForAdd.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

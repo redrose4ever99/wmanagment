@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_groupmanagementtf-->
+    <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_groupmanagementtf.psl1}"
+                           styleClass="AFStretchWidth " inlineStyle="height:750px;" dimensionsFrom="children">
+        <f:facet name="center">
+            <af:panelBox id="pb1" binding="#{backingBeanScope.backing_groupmanagementtf.pb1}" background="light"
+                         titleHalign="center" ramp="highlight" showDisclosure="false">
+                <f:facet name="toolbar"/>
+                <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_groupmanagementtf.pgl1}"
+                                    inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                                binding="#{backingBeanScope.backing_groupmanagementtf.gr1}">
+                        <af:gridCell marginStart="5px" width="50%" id="gc1"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc1}" halign="center">
+                            <af:inputText value="#{bindings.GroupName.inputValue}"
+                                          label="#{bindings.GroupName.hints.label}:"
+                                          required="#{bindings.GroupName.hints.mandatory}"
+                                          columns="30"
+                                          maximumLength="#{bindings.GroupName.hints.precision}"
+                                          shortDesc="#{bindings.GroupName.hints.tooltip}" id="it1"
+                                          binding="#{backingBeanScope.backing_groupmanagementtf.it1}"
+                                          inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                          contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                          partialTriggers="pc1:t1 pc1">
+                                <f:validator binding="#{bindings.GroupName.validator}"/>
+                            </af:inputText>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc2}" halign="center">
+                            <af:inputText value="#{bindings.GroupNotice.inputValue}"
+                                          label="#{bindings.GroupNotice.hints.label}:"
+                                          required="#{bindings.GroupNotice.hints.mandatory}"
+                                          columns="60"
+                                          maximumLength="#{bindings.GroupNotice.hints.precision}"
+                                          shortDesc="#{bindings.GroupNotice.hints.tooltip}" id="it2"
+                                          binding="#{backingBeanScope.backing_groupmanagementtf.it2}"
+                                          contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                          inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                          partialTriggers="pc1:t1 pc1">
+                                <f:validator binding="#{bindings.GroupNotice.validator}"/>
+                            </af:inputText>
+                            <af:panelLabelAndMessage label="#{bindings.Id.hints.label}" id="plam1"
+                                                     binding="#{backingBeanScope.backing_groupmanagementtf.plam1}"
+                                                     partialTriggers="pc1:t1 pc1" visible="false">
+                                <af:outputText value="#{bindings.Id.inputValue}"
+                                               shortDesc="#{bindings.Id.hints.tooltip}" id="ot5"
+                                               binding="#{backingBeanScope.backing_groupmanagementtf.ot5}">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                <af:panelGridLayout id="pgl2" binding="#{backingBeanScope.backing_groupmanagementtf.pgl2}"
+                                    inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2"
+                                binding="#{backingBeanScope.backing_groupmanagementtf.gr2}">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc3}" halign="center">
+                            <af:button text="مجموعة جديدة"
+                                       disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b1}"
+                                       icon="/images/new.png"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.NewGroup}"/>
+                            <af:button text="حفظ" id="b2"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b2}"
+                                       icon="/images/save.png"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.b2_action}"/>
+                            <af:button text="تراجع"
+                                       disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b3"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b3}"
+                                       icon="/images/back.png"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.GroupRoll}">
+                                <af:resetActionListener/>
+                            </af:button>
+                            <af:button text="حذف"
+                                       disabled="#{!bindings.Delete.enabled}" id="b4"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b4}"
+                                       icon="/images/deletebtn.png"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.GroupDel}"/>
+                            <af:button text="Execute"
+                                       disabled="#{!bindings.Execute.enabled}" id="b5"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b5}"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.GroupRefresh}"
+                                       visible="false"/>
+                            <af:button text="Execute"
+                                       disabled="#{!bindings.Execute.enabled}" id="b6"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b6}"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.GroupExe}" visible="false"/>
+                            <af:button text="Commit"
+                                       disabled="#{!bindings.Commit.enabled}" id="b7"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b7}"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.GroupCommit}"
+                                       visible="false"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                <af:panelGridLayout id="pgl3" binding="#{backingBeanScope.backing_groupmanagementtf.pgl3}"
+                                    inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3"
+                                binding="#{backingBeanScope.backing_groupmanagementtf.gr3}">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc4}" halign="center">
+                            <af:panelCollection id="pc1" binding="#{backingBeanScope.backing_groupmanagementtf.pc1}"
+                                                inlineStyle="width:1266px; height:120px;" featuresOff="statusBar"
+                                                defaultToolbarItemDisplay="icon">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.UserGroupForAddView1.collectionModel}" var="row"
+                                          rows="#{bindings.UserGroupForAddView1.rangeSize}"
+                                          emptyText="لايوجد بيانات"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.UserGroupForAddView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.UserGroupForAddView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.UserGroupForAddView1.rangeSize}"
+                                          filterModel="#{bindings.UserGroupForAddView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.UserGroupForAddView1Query.processQuery}"
+                                          varStatus="vs" id="t1" partialTriggers=":::b1 :::b4 :::b5 :::b6"
+                                          binding="#{backingBeanScope.backing_groupmanagementtf.t1}">
+                                    <af:column id="c3" inlineStyle="font-weight:bold;" align="center" headerText="م"
+                                               width="20">
+                                        <af:outputText value="#{vs.index+1}" id="ot7"
+                                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.UserGroupForAddView1.hints.GroupName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.UserGroupForAddView1.hints.GroupName.label}"
+                                               id="c1" inlineStyle="font-weight:bold;" align="center" width="400">
+                                        <af:outputText value="#{row.GroupName}"
+                                                       shortDesc="#{bindings.UserGroupForAddView1.hints.GroupName.tooltip}"
+                                                       id="ot1"
+                                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.UserGroupForAddView1.hints.GroupNotice.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.UserGroupForAddView1.hints.GroupNotice.label}"
+                                               id="c2" inlineStyle="font-weight:bold;" align="center" width="800">
+                                        <af:outputText value="#{row.GroupNotice}"
+                                                       shortDesc="#{bindings.UserGroupForAddView1.hints.GroupNotice.tooltip}"
+                                                       id="ot2"
+                                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                <af:panelGridLayout id="pgl4" binding="#{backingBeanScope.backing_groupmanagementtf.pgl4}"
+                                    inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                                    dimensionsFrom="children" rendered="true">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4"
+                                binding="#{backingBeanScope.backing_groupmanagementtf.gr4}">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc5}" halign="center">
+                            <af:panelGroupLayout layout="vertical" id="pgl5"
+                                                 binding="#{backingBeanScope.backing_groupmanagementtf.pgl5}">
+                                <af:panelHeader text="اختر معامل البحث" id="ph1"
+                                                binding="#{backingBeanScope.backing_groupmanagementtf.ph1}">
+                                    <af:query id="qryId1" headerText="بحث" disclosed="true"
+                                              value="#{bindings.GroupDetailForAddViewCriteriaQuery.queryDescriptor}"
+                                              model="#{bindings.GroupDetailForAddViewCriteriaQuery.queryModel}"
+                                              queryListener="#{bindings.GroupDetailForAddViewCriteriaQuery.processQuery}"
+                                              queryOperationListener="#{bindings.GroupDetailForAddViewCriteriaQuery.processQueryOperation}"
+                                              binding="#{backingBeanScope.backing_groupmanagementtf.qryId1}"
+                                              resultComponentId="::pc2:t2" saveQueryMode="hidden"/>
+                                </af:panelHeader>
+                            </af:panelGroupLayout>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                <af:panelGridLayout id="pgl6" binding="#{backingBeanScope.backing_groupmanagementtf.pgl6}"
+                                    inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                                    rendered="true">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5"
+                                binding="#{backingBeanScope.backing_groupmanagementtf.gr5}">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc6}" halign="center">
+                            <af:panelCollection id="pc2" binding="#{backingBeanScope.backing_groupmanagementtf.pc2}"
+                                                defaultToolbarItemDisplay="icon"
+                                                inlineStyle="width:814px; height:240px;" featuresOff="statusBar">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.GroupDetailForAddView2.collectionModel}" var="row"
+                                          rows="#{bindings.GroupDetailForAddView2.rangeSize}"
+                                          emptyText="لايوجد بيانات"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.GroupDetailForAddView2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.GroupDetailForAddView2.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.GroupDetailForAddView2.rangeSize}"
+                                          filterModel="#{bindings.GroupDetailForAddView2Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.GroupDetailForAddView2Query.processQuery}"
+                                          varStatus="vs" id="t2"
+                                          binding="#{backingBeanScope.backing_groupmanagementtf.t2}"
+                                          partialTriggers=":::b8 :::pc1:t1 :::pc1">
+                                    <af:column id="c6" inlineStyle="font-weight:bold;" align="center" headerText="م"
+                                               width="20">
+                                        <af:outputText value="#{vs.index+1}" id="ot4"
+                                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"/>
+                                    </af:column>
+                                    <af:column sortable="false"
+                                               headerText="#{bindings.GroupDetailForAddView2.hints.RoleName.label}"
+                                               id="c4" inlineStyle="font-weight:bold;" align="center" width="600">
+                                        <af:selectOneChoice value="#{row.bindings.RoleName.inputValue}"
+                                                            label="#{row.bindings.RoleName.label}"
+                                                            required="#{bindings.GroupDetailForAddView2.hints.RoleName.mandatory}"
+                                                            shortDesc="#{bindings.GroupDetailForAddView2.hints.RoleName.tooltip}"
+                                                            id="soc2" readOnly="true"
+                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                            <f:selectItems value="#{row.bindings.RoleName.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.RoleName.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.GroupDetailForAddView2.hints.RoleStatus.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.GroupDetailForAddView2.hints.RoleStatus.label}"
+                                               id="c5" inlineStyle="font-weight:bold;" align="center" width="150">
+                                        <af:selectOneChoice value="#{row.bindings.RoleStatus.inputValue}"
+                                                            label="#{row.bindings.RoleStatus.label}"
+                                                            required="#{bindings.GroupDetailForAddView2.hints.RoleStatus.mandatory}"
+                                                            shortDesc="#{bindings.GroupDetailForAddView2.hints.RoleStatus.tooltip}"
+                                                            id="soc1"
+                                                            inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                            contentStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;">
+                                            <f:selectItems value="#{row.bindings.RoleStatus.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.RoleStatus.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                <af:panelGridLayout id="pgl7" binding="#{backingBeanScope.backing_groupmanagementtf.pgl7}"
+                                    inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                                    rendered="true">
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6"
+                                binding="#{backingBeanScope.backing_groupmanagementtf.gr6}">
+                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"
+                                     binding="#{backingBeanScope.backing_groupmanagementtf.gc7}" halign="center">
+                            <af:button text="حفظ"
+                                       disabled="#{!bindings.Execute1.enabled}" id="b8"
+                                       binding="#{backingBeanScope.backing_groupmanagementtf.b8}"
+                                       icon="/images/save.png"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                       action="#{backingBeanScope.backing_groupmanagementtf.exeGroupDEtail}"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:button text="Rollback" disabled="#{!bindings.Rollback.enabled}"
+               immediate="true" id="b4" binding="#{backingBeanScope.backing_maintf.b4}"
+               action="#{backingBeanScope.backing_maintf.rollback1}" visible="false">
+        <af:resetActionListener/>
+    </af:button>
+    <af:panelBox id="pb1" binding="#{backingBeanScope.backing_maintf.pb1}" background="medium" ramp="highlight"
+                 text="إظهار - إخفاء خيارات البحث" titleHalign="center"
+                 contentStyle="background-color:rgb(214,230,241);"
+                 inlineStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold; border-style:groove; outline-style:groove; outline-width:medium;"
+                 immediate="true" visible="true" rendered="#{ (sessionScope.UserPart !='1') }">
+        <?audit suppress oracle.adf.faces.region.single-root-in-fragment?>
+        <f:facet name="toolbar"/>
+        <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_maintf.pgl1}"
+                            inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                            styleClass="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                        binding="#{backingBeanScope.backing_maintf.gr1}">
+                <af:gridCell marginStart="5px" id="gc1" binding="#{backingBeanScope.backing_maintf.gc1}">
+                    <af:panelBox text="معاملات البحث" id="pb2" binding="#{backingBeanScope.backing_maintf.pb2}"
+                                 background="dark" titleHalign="center"
+                                 contentStyle="background-color:rgb(214,230,241);"
+                                 inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                 ramp="highlight">
+                        <f:facet name="toolbar"/>
+                    </af:panelBox>
+                </af:gridCell>
+                <af:gridCell marginStart="25px" marginEnd="5px" id="gc2"
+                             binding="#{backingBeanScope.backing_maintf.gc2}">
+                    <af:panelBox text="نتائج البحث" id="pb3" binding="#{backingBeanScope.backing_maintf.pb3}"
+                                 background="dark" titleHalign="center"
+                                 contentStyle="background-color:rgb(214,230,241);"
+                                 inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;">
+                        <f:facet name="toolbar"/>
+                    </af:panelBox>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+        <af:clientListener method="togglePanelBox" type="dblClick"/>
+    </af:panelBox>
+    <af:spacer id="s2" binding="#{backingBeanScope.backing_maintf.s2}" height="20"/>
+    <af:panelBox id="pb4" binding="#{backingBeanScope.backing_maintf.pb4}" background="dark"
+                 titleHalign="center">
+        <?audit suppress oracle.adf.faces.region.single-root-in-fragment?>
+        <f:facet name="toolbar"/>
+        <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.backing_maintf.pgl2}" layout="horizontal">
+            <af:subform id="s1" binding="#{backingBeanScope.backing_maintf.s1}">
+                <af:button text="إدارة المستخدمين والصلاحيات" id="b1" binding="#{backingBeanScope.backing_maintf.b1}"
+                           rendered="#{ (sessionScope.UserPart=='1') }"
+                           inlineStyle="border-color:Gray; text-align:center; vertical-align:middle; color:Blue; border-style:ridge; border-width:2px; width:150.0px; height:25px; font-size:small; font-family:'Times New Roman', 'Arial Black', times, Serif; font-weight:bold;"
+                           immediate="true" action="#{backingBeanScope.backing_maintf.adduser}"/>
+                <af:button text="إدارة الموقع" id="b2" binding="#{backingBeanScope.backing_maintf.b2}"
+                           rendered="#{ (sessionScope.UserPart=='1') }"
+                           inlineStyle="border-color:Gray; text-align:center; vertical-align:middle; color:Blue; border-style:ridge; border-width:2px; width:225px; height:25px; font-size:small; font-family:'Times New Roman', 'Arial Black', times, Serif; font-weight:bold;"
+                           action="#{backingBeanScope.backing_maintf.SiteManagement}" immediate="true"/>
+                <af:button text="إضافة مركبة" id="b5" binding="#{backingBeanScope.backing_maintf.b5}"
+                           inlineStyle="border-color:Gray; text-align:center; vertical-align:middle; color:Blue; border-style:ridge; border-width:2px; width:225px; height:25px; font-size:small; font-family:'Times New Roman', 'Arial Black', times, Serif; font-weight:bold;"
+                           action="#{backingBeanScope.backing_maintf.AddVehicle}"
+                           rendered="#{ (sessionScope.AddVehicleTB=='1') }"/>
+                <af:button text="تغيير كلمة السر" id="b3" binding="#{backingBeanScope.backing_maintf.b3}"
+                           inlineStyle="border-color:Gray; text-align:center; vertical-align:middle; color:Blue; border-style:ridge; border-width:2px; width:100.0px; height:25px; font-size:small; font-family:'Times New Roman', 'Arial Black', times, Serif; font-weight:bold;"
+                           action="#{backingBeanScope.backing_maintf.ChangePass}" immediate="true"/>
+            </af:subform>
+        </af:panelGroupLayout>
+    </af:panelBox>
+    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_maintf.ps1}" collapsed="true" splitterPosition="254"
+                      dimensionsFrom="children" partialTriggers="s1:b1 s1:b2 s1:b3">
+        <?audit suppress oracle.adf.faces.region.single-root-in-fragment?>
+        <f:facet name="first"/>
+        <f:facet name="second">
+            <af:panelGroupLayout id="pgl3" binding="#{backingBeanScope.backing_maintf.pgl3}" layout="vertical">
+                <af:panelTabbed position="above" id="pt1" binding="#{backingBeanScope.backing_maintf.pt1}"
+                                dimensionsFrom="disclosedChild"
+                                inlineStyle="font-size:medium; background-color:rgb(214,230,241);">
+                    <af:showDetailItem id="tab1" text="إدارة المستخدمين  " binding="#{backingBeanScope.backing_maintf.tab1}"
+                                       rendered="#{ (sessionScope.UserPart=='1') }"
+                                       inlineStyle="border-color:ActiveBorder; border-style:groove; font-size:medium;"
+                                       partialTriggers="s1:b1 s1:b2 s1:b3" visible="true">
+                        <af:region value="#{bindings.UserManagementTF1.regionModel}" id="r1"
+                                   binding="#{backingBeanScope.backing_maintf.r1}"/>
+                    </af:showDetailItem>
+                    <af:showDetailItem text="إدارة مجموعات الصلاحيات" id="sdi1"
+                                       binding="#{backingBeanScope.backing_maintf.sdi1}"
+                                       rendered="#{ (sessionScope.UserPart=='1') }"
+                                       inlineStyle="border-color:ActiveBorder; border-style:groove; font-size:large;"
+                                       partialTriggers="s1:b1 s1:b2 s1:b3" visible="true">
+                        <af:region value="#{bindings.GroupManagementTF1.regionModel}" id="r2"
+                                   binding="#{backingBeanScope.backing_maintf.r2}"/>
+                    </af:showDetailItem>
+                    <af:showDetailItem text="عمليات المستخدم" id="sdi2"
+                                       binding="#{backingBeanScope.backing_maintf.sdi2}"
+                                       rendered="#{ (sessionScope.UserPart=='1') }"
+                                       inlineStyle="border-color:ActiveBorder; border-style:groove;"
+                                       partialTriggers="s1:b1 s1:b2 s1:b3" visible="true">
+                        <af:region value="#{bindings.UserActionOperationTF1.regionModel}" id="r3"
+                                   binding="#{backingBeanScope.backing_maintf.r3}"/>
+                    </af:showDetailItem>
+                    <af:showDetailItem text="إدارة الموقع" id="sdi3"
+                                       binding="#{backingBeanScope.backing_maintf.sdi3}"
+                                       inlineStyle="border-color:ActiveBorder; border-style:groove;" visible="false"
+                                       partialTriggers="s1:b1 s1:b2 s1:b3"
+                                       rendered="#{ (sessionScope.UserPart=='1') }"/>
+                    <af:showDetailItem text="إضافة مركبة" id="sdi5"
+                                       binding="#{backingBeanScope.backing_maintf.sdi5}" visible="true"
+                                       rendered="#{ (sessionScope.AddVehicleTB=='1') }">
+                        <af:region value="#{bindings.AddVehicleTF1.regionModel}" id="r5"
+                                   binding="#{backingBeanScope.backing_maintf.r5}"/>
+                    </af:showDetailItem>
+                    <af:showDetailItem text="تغيير كلمة السر" id="sdi4"
+                                       binding="#{backingBeanScope.backing_maintf.sdi4}"
+                                       inlineStyle="border-color:ActiveBorder; border-style:groove;" visible="false"
+                                       partialTriggers="s1:b1 s1:b2 s1:b3">
+                        <af:region value="#{bindings.UserChangePasswordTF1.regionModel}" id="r4"
+                                   binding="#{backingBeanScope.backing_maintf.r4}"/>
+                    </af:showDetailItem>
+                </af:panelTabbed>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:panelSplitter>
+     
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_maintf-->
+</ui:composition>

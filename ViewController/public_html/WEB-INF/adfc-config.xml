@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__2">
+    <managed-bean-name>backing_LoginPage</managed-bean-name>
+    <managed-bean-class>view.backing.LoginPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1LoginPage.jsf-->
+  </managed-bean>
+  <managed-bean id="__1">
+    <managed-bean-name>backing_MainPage</managed-bean-name>
+    <managed-bean-class>view.backing.MainPage</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1MainPage.jsf-->
+  </managed-bean>
+</adfc-config>

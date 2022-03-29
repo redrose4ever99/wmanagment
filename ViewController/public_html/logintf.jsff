@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                
+                
+        <af:resource type="javascript">
+ 
+    function myOnkeyPress(componentEvent) {
+        var evt = componentEvent.getNativeEvent();
+        var keyCode = AdfAgent.AGENT.getKeyCode(evt);
+        if (AdfAgent.AGENT.getKeyCode(evt) == 13) {
+               var formComponents = componentEvent.getSource();
+               var enterBtn = formComponents.findComponent('b1');
+               enterBtn.focus();  
+        }
+    }
+    
+     </af:resource>
+  
+    <af:panelStretchLayout id="psl1" binding="#{backingBeanScope.backing_logintf.psl1}" dimensionsFrom="children"
+                           styleClass="AFStretchWidth">
+        <f:facet name="center">
+            <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.backing_logintf.pgl1}" layout="scroll">
+                <af:panelBox id="pb1" binding="#{backingBeanScope.backing_logintf.pb1}" background="light"
+                             ramp="highlight" showDisclosure="false">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.backing_logintf.pgl2}" halign="center"
+                                         layout="horizontal">
+                        <af:panelGridLayout id="pgl3" binding="#{backingBeanScope.backing_logintf.pgl3}"
+                                            rendered="true">
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                                        binding="#{backingBeanScope.backing_logintf.gr1}">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"
+                                             binding="#{backingBeanScope.backing_logintf.gc1}" halign="center"
+                                             valign="middle">
+                                    <af:image source="/images/04062021002.jpg" id="i1"
+                                              binding="#{backingBeanScope.backing_logintf.i1}"
+                                              inlineStyle="width:1000px; height:400px;"/>
+                                    <af:panelGridLayout id="pgl4" binding="#{backingBeanScope.backing_logintf.pgl4}"
+                                                        rendered="true"
+                                                        styleClass="border-color:rgb(247,247,247); border-style:inset; outline-style:inset; outline-color:rgb(247,247,247); outline-width:thin; border-width:thin;"
+                                                        inlineStyle="border-color:rgb(247,247,247); border-style:inset; outline-style:groove; outline-color:rgb(247,247,247); outline-width:thin; border-width:medium;">
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2"
+                                                    binding="#{backingBeanScope.backing_logintf.gr2}">
+                                            <af:gridCell marginStart="5px" marginEnd="5px" id="gc2"
+                                                         binding="#{backingBeanScope.backing_logintf.gc2}"
+                                                         valign="middle" width="100%" halign="center">
+                                                <af:panelGroupLayout id="pgl5"
+                                                                     binding="#{backingBeanScope.backing_logintf.pgl5}"
+                                                                     halign="center" layout="vertical">
+                                                    <af:panelFormLayout id="pfl1"
+                                                                        binding="#{backingBeanScope.backing_logintf.pfl1}"
+                                                                        rows="2147483647"
+                                                                        inlineStyle="width:500px; border-style:dashed; border-color:rgb(132,66,0); border-width:medium;">
+                                                        <f:facet name="footer"/>
+                                                        <af:spacer id="s1"
+                                                                   binding="#{backingBeanScope.backing_logintf.s1}"
+                                                                   height="10" width="10"/>
+                                                        <af:panelGroupLayout id="pgl6"
+                                                                             binding="#{backingBeanScope.backing_logintf.pgl6}"
+                                                                             halign="center" layout="horizontal">
+                                                            <af:image source="/images/Temp.png" id="i2"
+                                                                      binding="#{backingBeanScope.backing_logintf.i2}"
+                                                                      inlineStyle="height:30px; width:33px;"/>
+                                                            <af:spacer id="s2"
+                                                                       binding="#{backingBeanScope.backing_logintf.s2}"
+                                                                       height="5" width="10"/>
+                                                            <af:outputText value="تسجيل دخول" id="ot1"
+                                                                           binding="#{backingBeanScope.backing_logintf.ot1}"
+                                                                           styleClass="color:Black; font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                           inlineStyle="color:rgb(0,33,115); font-size:large; font-family:'Times New Roman'; font-weight:bold;"/>
+                                                        </af:panelGroupLayout>
+                                                        <af:spacer id="s3"
+                                                                   binding="#{backingBeanScope.backing_logintf.s3}"
+                                                                   height="10" width="10"/>
+                                                        <af:inputText label="اسم المستخدم:" id="it1"
+                                                                      binding="#{backingBeanScope.backing_logintf.it1}"
+                                                                      columns="30"
+                                                                      contentStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      inlineStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      autoComplete="off"
+                                                                      labelStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      value="#{backingBeanScope.backing_logintf.usernameInput}"
+                                                                      autoSubmit="true"/>
+                                                        <af:inputText label="كلمة السر:" id="it2"
+                                                                      binding="#{backingBeanScope.backing_logintf.it2}"
+                                                                      columns="30"
+                                                                      contentStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      inlineStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      autoComplete="off" secret="true"
+                                                                      labelStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold;"
+                                                                      value="#{backingBeanScope.backing_logintf.passwordInpu}"
+                                                                      autoSubmit="true">
+                                                            <af:clientListener method="myOnkeyPress" type="keyDown"/>
+                                                        </af:inputText>
+                                                        <af:panelGridLayout id="pgl7"
+                                                                            binding="#{backingBeanScope.backing_logintf.pgl7}">
+                                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px"
+                                                                        id="gr3"
+                                                                        binding="#{backingBeanScope.backing_logintf.gr3}">
+                                                                <af:gridCell marginStart="5px" width="34%" id="gc3"
+                                                                             binding="#{backingBeanScope.backing_logintf.gc3}"/>
+                                                                <af:gridCell marginStart="5px" id="gc4"
+                                                                             binding="#{backingBeanScope.backing_logintf.gc4}">
+                                                                    <af:panelGroupLayout id="pgl8"
+                                                                                         binding="#{backingBeanScope.backing_logintf.pgl8}"
+                                                                                         layout="horizontal">
+                                                                        <af:spacer id="s4"
+                                                                                   binding="#{backingBeanScope.backing_logintf.s4}"
+                                                                                   height="10" width="10"/>
+                                                                        <af:button text="دخول" id="b1"
+                                                                                   binding="#{backingBeanScope.backing_logintf.b1}"
+                                                                                   icon="/images/login.png"
+                                                                                   inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                                   styleClass="font-size:medium; font-family:'Times New Roman'; font-weight:bold;"
+                                                                                   action="#{backingBeanScope.backing_logintf.LoginAction}"/>
+                                                                        <af:spacer id="s5"
+                                                                                   binding="#{backingBeanScope.backing_logintf.s5}"
+                                                                                   height="10" width="30"/>
+                                                                    </af:panelGroupLayout>
+                                                                </af:gridCell>
+                                                                <af:gridCell marginStart="5px" width="33%"
+                                                                             marginEnd="5px" id="gc5"
+                                                                             binding="#{backingBeanScope.backing_logintf.gc5}"/>
+                                                            </af:gridRow>
+                                                        </af:panelGridLayout>
+                                                    </af:panelFormLayout>
+                                                </af:panelGroupLayout>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:panelGroupLayout>
+                </af:panelBox>
+            </af:panelGroupLayout>
+        </f:facet>
+        
+    </af:panelStretchLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_logintf-->
+</ui:composition>

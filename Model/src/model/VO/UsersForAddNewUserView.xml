@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsersForAddNewUserView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT"
+  RowClass="model.VO.UsersForAddNewUserViewRowImpl"
+  ComponentClass="model.VO.UsersForAddNewUserViewImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ProgramNconversionsUserPart1"
+    ViewObjectName="model.VO.ProgramNconversionsUserPart"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProgramNconversionsPurview1"
+    ViewObjectName="model.VO.ProgramNconversionsPurview"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProgramNconversionsAcountStat1"
+    ViewObjectName="model.VO.ProgramNconversionsAcountStat"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ItsNconversionsForCity1"
+    ViewObjectName="model.VO.ItsNconversionsForCity"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_UserPart"
+    ListVOName="ProgramNconversionsUserPart1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserPart"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UserPurview"
+    ListVOName="ProgramNconversionsPurview1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserPurview"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AcountState"
+    ListVOName="ProgramNconversionsAcountStat1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AcountState"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UserCity"
+    ListVOName="ItsNconversionsForCity1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UserCity"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Encoded"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Decoded"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="UsersForAddNewUser"
+    Entity="model.EO.UsersForAddNewUser"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserFullName"
+    PrecisionRule="true"
+    EntityAttrName="UserFullName"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="USER_FULL_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.UserFullName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserName"
+    PrecisionRule="true"
+    EntityAttrName="UserName"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="USER_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.UserName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserPassword"
+    PrecisionRule="true"
+    EntityAttrName="UserPassword"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="USER_PASSWORD">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.UserPassword_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserPart"
+    PrecisionRule="true"
+    EntityAttrName="UserPart"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="USER_PART"
+    LOVName="LOV_UserPart">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.UserPart_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserPurview"
+    PrecisionRule="true"
+    EntityAttrName="UserPurview"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="USER_PURVIEW"
+    LOVName="LOV_UserPurview">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.UserPurview_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AcountState"
+    PrecisionRule="true"
+    EntityAttrName="AcountState"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="ACOUNT_STATE"
+    LOVName="LOV_AcountState">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.AcountState_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IpIddress"
+    PrecisionRule="true"
+    EntityAttrName="IpIddress"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="IP_IDDRESS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.IpIddress_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UserCity"
+    PrecisionRule="true"
+    EntityAttrName="UserCity"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="USER_CITY"
+    LOVName="LOV_UserCity">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.UserCity_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredDate"
+    PrecisionRule="true"
+    EntityAttrName="EnteredDate"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="ENTERED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.EnteredDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EnteredUser"
+    PrecisionRule="true"
+    EntityAttrName="EnteredUser"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="ENTERED_USER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.UsersForAddNewUserView.EnteredUser_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UPDATEDBY"
+    PrecisionRule="true"
+    EntityAttrName="UPDATEDBY"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="UPDATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UPDATEDON"
+    PrecisionRule="true"
+    EntityAttrName="UPDATEDON"
+    EntityUsage="UsersForAddNewUser"
+    AliasName="UPDATED_ON">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="UsersForAddNewUserViewCriteria"
+    ViewObjectName="model.VO.UsersForAddNewUserView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Advanced"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="false"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="UsersForAddNewUserViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="UserFullName"
+        ViewAttribute="UserFullName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="UserPart"
+        ViewAttribute="UserPart"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="UserPurview"
+        ViewAttribute="UserPurview"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewLinkAccessor
+    Name="UserRoleWithUserForEditView"
+    ViewLink="model.VO.UserWithUserRole"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="UserGroupAddedForAddView"
+    ViewLink="model.VO.UserWithUserGroup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Id"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Id"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="Id"
+      Ascending="false"/>
+  </SortCriteria>
+</ViewObject>

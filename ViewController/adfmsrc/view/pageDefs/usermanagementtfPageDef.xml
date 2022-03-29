@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="usermanagementtfPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UsersForAddNewUserView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UsersForAddNewUserView1Iterator"/>
+    <searchRegion Criteria="UsersForAddNewUserViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="UsersForAddNewUserView1Iterator" id="UsersForAddNewUserViewCriteriaQuery"/>
+    <iterator Binds="UserRoleWithUserForEditView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UserRoleWithUserForEditView2Iterator"/>
+    <searchRegion Criteria="UserRoleWithUserForEditViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="UserRoleWithUserForEditView2Iterator" id="UserRoleWithUserForEditViewCriteriaQuery"/>
+    <iterator Binds="UserGroupAddedForAddView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UserGroupAddedForAddView2Iterator"/>
+    <searchRegion Binds="UserGroupAddedForAddView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="UserGroupAddedForAddView2Query"/>
+    <iterator Binds="UserGroupForAddView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="UserGroupForAddView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="UsersForAddNewUserView1Iterator" id="UsersForAddNewUserView1">
+      <nodeDefinition DefName="model.VO.UsersForAddNewUserView" Name="UsersForAddNewUserView10">
+        <AttrNames>
+          <Item Value="UserFullName"/>
+          <Item Value="UserName"/>
+          <Item Value="UserPart"/>
+          <Item Value="UserPurview"/>
+          <Item Value="AcountState"/>
+          <Item Value="IpIddress"/>
+          <Item Value="UserCity"/>
+          <Item Value="EnteredDate"/>
+          <Item Value="EnteredUser"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="UserFullName">
+      <AttrNames>
+        <Item Value="UserFullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="UserPassword">
+      <AttrNames>
+        <Item Value="UserPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="UsersForAddNewUserView1Iterator" StaticList="false" Uses="LOV_UserPart" id="UserPart"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="UsersForAddNewUserView1Iterator" StaticList="false" Uses="LOV_UserCity" id="UserCity"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="IpIddress">
+      <AttrNames>
+        <Item Value="IpIddress"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="UsersForAddNewUserView1Iterator" StaticList="false" Uses="LOV_AcountState" id="AcountState"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="UsersForAddNewUserView1Iterator" StaticList="false" Uses="LOV_UserPurview" id="UserPurview"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="EnteredDate">
+      <AttrNames>
+        <Item Value="EnteredDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="EnteredUser">
+      <AttrNames>
+        <Item Value="EnteredUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="UsersForAddNewUserView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="UsersForAddNewUserView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="UsersForAddNewUserView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="UsersForAddNewUserView1Iterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="UserRoleWithUserForEditView2Iterator" id="UserRoleWithUserForEditView21">
+      <nodeDefinition DefName="model.VO.UserRoleWithUserForEditView" Name="UserRoleWithUserForEditView210">
+        <AttrNames>
+          <Item Value="RoleDescriptionFrom"/>
+          <Item Value="RoleStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="UserGroupAddedForAddView2Iterator" id="UserGroupAddedForAddView2">
+      <nodeDefinition DefName="model.VO.UserGroupAddedForAddView" Name="UserGroupAddedForAddView20">
+        <AttrNames>
+          <Item Value="GroupNameFrom"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="UserRoleWithUserForEditView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <list IterBinding="UserGroupForAddView1Iterator" ListOperMode="navigation" ListIter="UserGroupForAddView1Iterator"
+          id="UserGroupForAddView1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GroupName"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="UserGroupForAddView1Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

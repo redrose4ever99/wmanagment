@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsersActionView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USERS_ACTION"
+  AliasName="UsersActionView"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USERS_ACTION"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="UserId"
+    ColumnName="USER_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USERS_ACTION"/>
+  <Attribute
+    Name="ActionType"
+    ColumnName="ACTION_TYPE"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USERS_ACTION"/>
+  <Attribute
+    Name="TableName"
+    ColumnName="TABLE_NAME"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NCHAR"
+    TableName="USERS_ACTION"/>
+  <Attribute
+    Name="TableId"
+    ColumnName="TABLE_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="USERS_ACTION"/>
+  <Attribute
+    Name="ActionTime"
+    ColumnName="ACTION_TIME"
+    SQLType="STRUCT"
+    Type="java.lang.String"
+    ColumnType="NCHAR"
+    TableName="USERS_ACTION"/>
+  <Key
+    Name="PKUSERSACTION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_USERS_ACTION"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.UsersActionView.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

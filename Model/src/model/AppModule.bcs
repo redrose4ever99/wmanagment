@@ -1,0 +1,12 @@
+//Groovy Scripts for model.AppModule
+
+package model
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="ProgramNconversionsUserDiagram1", name="UserIdFrom")
+def UserIdFrom_ProgramNconversionsUserDiagram1_BindVariable_BoundParameter()
+{
+ 
+}
+

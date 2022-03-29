@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="MainPage.jsf" id="d1" binding="#{backingBeanScope.backing_MainPage.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_MainPage.f1}">
+            <af:panelGridLayout id="pgl1" binding="#{backingBeanScope.backing_MainPage.pgl1}">
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1"
+                            binding="#{backingBeanScope.backing_MainPage.gr1}">
+                    <af:gridCell marginStart="5px" width="34%" id="gc1"
+                                 binding="#{backingBeanScope.backing_MainPage.gc1}">
+                        <af:spacer id="s1" binding="#{backingBeanScope.backing_MainPage.s1}"/>
+                        <af:outputText value="مرحباً:" id="ot1" binding="#{backingBeanScope.backing_MainPage.ot1}"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold; color:Blue;"/>
+                        <af:spacer id="s2" binding="#{backingBeanScope.backing_MainPage.s2}"/>
+                        <af:outputText value="#{utility.bindingFullName}" id="ot2" binding="#{backingBeanScope.backing_MainPage.ot2}"
+                                       inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold; color:WindowText;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gc2"
+                                 binding="#{backingBeanScope.backing_MainPage.gc2}" halign="center">
+                        <af:outputText value="منظومة إدارة الوقود" id="ot3" binding="#{backingBeanScope.backing_MainPage.ot3}"
+                                       inlineStyle="font-size:large; font-family:'Times New Roman'; font-weight:bold; color:WindowText;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3"
+                                 binding="#{backingBeanScope.backing_MainPage.gc3}" halign="end">
+                        <af:link text="تسجيل خروج" id="l1" binding="#{backingBeanScope.backing_MainPage.l1}"
+                                 action="logout"
+                                 inlineStyle="font-size:medium; font-family:'Times New Roman'; font-weight:bold; color:Blue;"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+            <af:spacer id="s3" binding="#{backingBeanScope.backing_MainPage.s3}"/>
+            <af:region value="#{bindings.MainTF1.regionModel}" id="r1"
+                       binding="#{backingBeanScope.backing_MainPage.r1}"/>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_MainPage-->
+</f:view>
