@@ -1223,5 +1223,21 @@ public class AppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getOurviewdivunitView1() {
         return (ViewObjectImpl) findViewObject("OurviewdivunitView1");
     }
+
+    /**
+     * Container's getter for OiltypeForAddView1.
+     * @return OiltypeForAddView1
+     */
+    public ViewObjectImpl getOiltypeForAddView1() {
+        return (ViewObjectImpl) findViewObject("OiltypeForAddView1");
+    }
+
+    /**
+     * Container's getter for OilvehiclecircuitsForAddView1.
+     * @return OilvehiclecircuitsForAddView1
+     */
+    public ViewObjectImpl getOilvehiclecircuitsForAddView1() {
+        return (ViewObjectImpl) findViewObject("OilvehiclecircuitsForAddView1");
+    }
 }
 

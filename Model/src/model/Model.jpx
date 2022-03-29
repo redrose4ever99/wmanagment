@@ -32,6 +32,8 @@
     <Attr Name="_domainNames14" Value="model.EO.NVARCHAR6"/>
     <Attr Name="_domainNames15" Value="model.EO.UNIQUEIDENTIFIER"/>
     <Attr Name="_domainNames16" Value="model.EO.TEXT"/>
+    <Attr Name="_domainNames17" Value="model.EO.NVARCHAR7"/>
+    <Attr Name="_domainNames18" Value="model.EO.UNIQUEIDENTIFIER1"/>
   </DesignTime>
   <Containee
     Name="EO"

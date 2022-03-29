@@ -109,6 +109,12 @@
   <ViewUsage
     Name="OurviewdivunitView1"
     ViewObjectName="model.VO.OurviewdivunitView"/>
+  <ViewUsage
+    Name="OiltypeForAddView1"
+    ViewObjectName="model.VO.OiltypeForAddView"/>
+  <ViewUsage
+    Name="OilvehiclecircuitsForAddView1"
+    ViewObjectName="model.VO.OilvehiclecircuitsForAddView"/>
   <ViewLinkUsage
     Name="UserWithUserRole1"
     ViewLinkObjectName="model.VO.UserWithUserRole"

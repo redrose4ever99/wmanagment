@@ -12,7 +12,6 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelBox;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGridLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelSplitter;
-import oracle.adf.view.rich.component.rich.layout.RichPanelSpringboard;
 import oracle.adf.view.rich.component.rich.layout.RichPanelTabbed;
 import oracle.adf.view.rich.component.rich.layout.RichShowDetailItem;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
@@ -54,12 +53,6 @@ public class Maintf {
     private RichButton b5;
     private RichShowDetailItem sdi5;
     private RichRegion r5;
-    private RichPanelSpringboard ps2;
-    private RichShowDetailItem sdi6;
-    private RichShowDetailItem sdi7;
-    private RichShowDetailItem sdi8;
-    private RichShowDetailItem sdi9;
-    private RichShowDetailItem sdi10;
 
 
     public void setPb1(RichPanelBox pb1) {
@@ -383,53 +376,5 @@ public class Maintf {
 
     public RichRegion getR5() {
         return r5;
-    }
-
-    public void setPs2(RichPanelSpringboard ps2) {
-        this.ps2 = ps2;
-    }
-
-    public RichPanelSpringboard getPs2() {
-        return ps2;
-    }
-
-    public void setSdi6(RichShowDetailItem sdi6) {
-        this.sdi6 = sdi6;
-    }
-
-    public RichShowDetailItem getSdi6() {
-        return sdi6;
-    }
-
-    public void setSdi7(RichShowDetailItem sdi7) {
-        this.sdi7 = sdi7;
-    }
-
-    public RichShowDetailItem getSdi7() {
-        return sdi7;
-    }
-
-    public void setSdi8(RichShowDetailItem sdi8) {
-        this.sdi8 = sdi8;
-    }
-
-    public RichShowDetailItem getSdi8() {
-        return sdi8;
-    }
-
-    public void setSdi9(RichShowDetailItem sdi9) {
-        this.sdi9 = sdi9;
-    }
-
-    public RichShowDetailItem getSdi9() {
-        return sdi9;
-    }
-
-    public void setSdi10(RichShowDetailItem sdi10) {
-        this.sdi10 = sdi10;
-    }
-
-    public RichShowDetailItem getSdi10() {
-        return sdi10;
     }
 }

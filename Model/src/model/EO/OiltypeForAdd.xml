@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OiltypeForAdd"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OilType"
+  AliasName="OiltypeForAdd"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OilType"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Label"
+    IsNotNull="true"
+    Domain="model.EO.NVARCHAR7"
+    ColumnName="Label"
+    SQLType="STRUCT"
+    Type="model.EO.common.NVARCHAR7"
+    ColumnType="NVARCHAR"
+    TableName="OilType"/>
+  <Attribute
+    Name="Burnratio"
+    Precision="12"
+    Scale="9"
+    ColumnName="BurnRatio"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="OilType"/>
+  <Attribute
+    Name="Maincat"
+    Domain="model.EO.NVARCHAR7"
+    ColumnName="MainCat"
+    SQLType="STRUCT"
+    Type="model.EO.common.NVARCHAR7"
+    ColumnType="NVARCHAR"
+    TableName="OilType"/>
+  <Attribute
+    Name="Subcat"
+    Domain="model.EO.NVARCHAR7"
+    ColumnName="SubCat"
+    SQLType="STRUCT"
+    Type="model.EO.common.NVARCHAR7"
+    ColumnType="NVARCHAR"
+    TableName="OilType"/>
+  <Attribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    Domain="model.EO.UNIQUEIDENTIFIER1"
+    ColumnName="msrepl_tran_version"
+    SQLType="STRUCT"
+    Type="model.EO.common.UNIQUEIDENTIFIER1"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="OilType"/>
+  <Key
+    Name="PKOilType37461F20"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK__OilType__37461F20"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.OiltypeForAdd.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>
