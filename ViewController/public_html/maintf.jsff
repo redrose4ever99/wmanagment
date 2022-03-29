@@ -99,9 +99,23 @@
                     </af:showDetailItem>
                     <af:showDetailItem text="إدارة الموقع" id="sdi3"
                                        binding="#{backingBeanScope.backing_maintf.sdi3}"
-                                       inlineStyle="border-color:ActiveBorder; border-style:groove;" visible="false"
+                                       inlineStyle="border-color:ActiveBorder; border-style:groove;" visible="true"
                                        partialTriggers="s1:b1 s1:b2 s1:b3"
-                                       rendered="#{ (sessionScope.UserPart=='1') }"/>
+                                       rendered="#{ (sessionScope.UserPart=='1') }">
+                        <af:panelSpringboard id="ps2" binding="#{backingBeanScope.backing_maintf.ps2}"
+                                             displayMode="grid">
+                            <af:showDetailItem text="إدارة الزيوت" id="sdi6"
+                                               binding="#{backingBeanScope.backing_maintf.sdi6}"/>
+                            <af:showDetailItem text="إدارة التراميز" id="sdi7"
+                                               binding="#{backingBeanScope.backing_maintf.sdi7}"/>
+                            <af:showDetailItem text="إدارة الخطة" id="sdi8"
+                                               binding="#{backingBeanScope.backing_maintf.sdi8}"/>
+                            <af:showDetailItem text="إدارة 1" id="sdi9"
+                                               binding="#{backingBeanScope.backing_maintf.sdi9}"/>
+                            <af:showDetailItem text="شجرة التشكيلات" id="sdi10"
+                                               binding="#{backingBeanScope.backing_maintf.sdi10}"/>
+                        </af:panelSpringboard>
+                    </af:showDetailItem>
                     <af:showDetailItem text="إضافة مركبة" id="sdi5"
                                        binding="#{backingBeanScope.backing_maintf.sdi5}" visible="true"
                                        rendered="#{ (sessionScope.AddVehicleTB=='1') }">
