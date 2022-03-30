@@ -1239,5 +1239,21 @@ public class AppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getOilvehiclecircuitsForAddView1() {
         return (ViewObjectImpl) findViewObject("OilvehiclecircuitsForAddView1");
     }
+
+    /**
+     * Container's getter for OilcircuitcategoryForAddView1.
+     * @return OilcircuitcategoryForAddView1
+     */
+    public ViewObjectImpl getOilcircuitcategoryForAddView1() {
+        return (ViewObjectImpl) findViewObject("OilcircuitcategoryForAddView1");
+    }
+
+    /**
+     * Container's getter for OilcircuitForAddView1.
+     * @return OilcircuitForAddView1
+     */
+    public ViewObjectImpl getOilcircuitForAddView1() {
+        return (ViewObjectImpl) findViewObject("OilcircuitForAddView1");
+    }
 }
 

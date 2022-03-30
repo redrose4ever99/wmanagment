@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OilcircuitForAdd"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OilCircuit"
+  AliasName="OilcircuitForAdd"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OilCircuit"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Label"
+    IsNotNull="true"
+    Domain="model.EO.NVARCHAR8"
+    ColumnName="Label"
+    SQLType="STRUCT"
+    Type="model.EO.common.NVARCHAR8"
+    ColumnType="NVARCHAR"
+    TableName="OilCircuit"/>
+  <Attribute
+    Name="Oilcategoryid"
+    IsNotNull="true"
+    ColumnName="OilCategoryID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OilCircuit"/>
+  <Attribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    Domain="model.EO.UNIQUEIDENTIFIER2"
+    ColumnName="msrepl_tran_version"
+    SQLType="STRUCT"
+    Type="model.EO.common.UNIQUEIDENTIFIER2"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="OilCircuit"/>
+  <AccessorAttribute
+    Name="OilcircuitcategoryForAdd"
+    Association="model.EO.FKOilCircuiOilCa3B16B004Assoc"
+    AssociationEnd="model.EO.FKOilCircuiOilCa3B16B004Assoc.OilcircuitcategoryForAdd"
+    AssociationOtherEnd="model.EO.FKOilCircuiOilCa3B16B004Assoc.OilcircuitForAdd"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PKOilCircuit2FA4FD58"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK__OilCircuit__2FA4FD58"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.OilcircuitForAdd.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FKOilCircuiOilCa3B16B004">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK__OilCircuitCatego__30992191"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK__OilCircui__OilCa__3B16B004"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.OilcircuitForAdd.Oilcategoryid"/>
+    </AttrArray>
+  </Key>
+</Entity>

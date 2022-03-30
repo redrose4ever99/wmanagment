@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OilcircuitcategoryForAdd"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OilCircuitCategory"
+  AliasName="OilcircuitcategoryForAdd"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OilCircuitCategory"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Label"
+    IsNotNull="true"
+    Domain="model.EO.NVARCHAR8"
+    ColumnName="Label"
+    SQLType="STRUCT"
+    Type="model.EO.common.NVARCHAR8"
+    ColumnType="NVARCHAR"
+    TableName="OilCircuitCategory"/>
+  <Attribute
+    Name="Changeeveryyrs"
+    IsNotNull="true"
+    ColumnName="ChangeEveryYrs"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="OilCircuitCategory"/>
+  <Attribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    Domain="model.EO.UNIQUEIDENTIFIER2"
+    ColumnName="msrepl_tran_version"
+    SQLType="STRUCT"
+    Type="model.EO.common.UNIQUEIDENTIFIER2"
+    ColumnType="UNIQUEIDENTIFIER"
+    TableName="OilCircuitCategory"/>
+  <AccessorAttribute
+    Name="OilcircuitForAdd"
+    Association="model.EO.FKOilCircuiOilCa3B16B004Assoc"
+    AssociationEnd="model.EO.FKOilCircuiOilCa3B16B004Assoc.OilcircuitForAdd"
+    AssociationOtherEnd="model.EO.FKOilCircuiOilCa3B16B004Assoc.OilcircuitcategoryForAdd"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PKOilCircuitCatego30992191"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK__OilCircuitCatego__30992191"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.OilcircuitcategoryForAdd.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

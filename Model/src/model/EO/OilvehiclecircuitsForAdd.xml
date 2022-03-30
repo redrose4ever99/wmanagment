@@ -41,7 +41,7 @@
     Scale="3"
     ColumnName="Capacity"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Float"
     ColumnType="DECIMAL"
     TableName="OilVehicleCircuits"/>
   <Attribute
@@ -51,7 +51,7 @@
     Scale="4"
     ColumnName="ChangeRatio"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Float"
     ColumnType="DECIMAL"
     TableName="OilVehicleCircuits"/>
   <Attribute
@@ -61,7 +61,7 @@
     Scale="6"
     ColumnName="ReplaceRatio"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Float"
     ColumnType="DECIMAL"
     TableName="OilVehicleCircuits"/>
   <Attribute
@@ -71,7 +71,7 @@
     Scale="3"
     ColumnName="ChangeDistance"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Float"
     ColumnType="DECIMAL"
     TableName="OilVehicleCircuits"/>
   <Attribute
@@ -81,7 +81,7 @@
     Scale="0"
     ColumnName="ChangeHours"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Float"
     ColumnType="DECIMAL"
     TableName="OilVehicleCircuits"/>
   <Attribute

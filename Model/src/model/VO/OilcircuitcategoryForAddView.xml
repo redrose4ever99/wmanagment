@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OilcircuitcategoryForAddView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="OilcircuitcategoryForAdd"
+    Entity="model.EO.OilcircuitcategoryForAdd"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="OilcircuitcategoryForAdd"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Label"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Label"
+    EntityUsage="OilcircuitcategoryForAdd"
+    AliasName="Label"/>
+  <ViewAttribute
+    Name="Changeeveryyrs"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Changeeveryyrs"
+    EntityUsage="OilcircuitcategoryForAdd"
+    AliasName="ChangeEveryYrs"/>
+  <ViewAttribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MsreplTranVersion"
+    EntityUsage="OilcircuitcategoryForAdd"
+    AliasName="msrepl_tran_version"/>
+  <ViewLinkAccessor
+    Name="OilcircuitForAddView"
+    ViewLink="model.VO.FKOilCircuiOilCa3B16B004Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

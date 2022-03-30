@@ -22,10 +22,9 @@
   <Attribute
     Name="Label"
     IsNotNull="true"
-    Domain="model.EO.NVARCHAR7"
     ColumnName="Label"
     SQLType="STRUCT"
-    Type="model.EO.common.NVARCHAR7"
+    Type="java.lang.String"
     ColumnType="NVARCHAR"
     TableName="OilType"/>
   <Attribute
@@ -34,23 +33,21 @@
     Scale="9"
     ColumnName="BurnRatio"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="DECIMAL"
     TableName="OilType"/>
   <Attribute
     Name="Maincat"
-    Domain="model.EO.NVARCHAR7"
     ColumnName="MainCat"
     SQLType="STRUCT"
-    Type="model.EO.common.NVARCHAR7"
+    Type="java.lang.String"
     ColumnType="NVARCHAR"
     TableName="OilType"/>
   <Attribute
     Name="Subcat"
-    Domain="model.EO.NVARCHAR7"
     ColumnName="SubCat"
     SQLType="STRUCT"
-    Type="model.EO.common.NVARCHAR7"
+    Type="java.lang.String"
     ColumnType="NVARCHAR"
     TableName="OilType"/>
   <Attribute

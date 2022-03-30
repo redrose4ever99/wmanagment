@@ -6,13 +6,16 @@
   Name="OiltypeForAddView"
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="JDBC"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="OiltypeForAdd.ID, 
+       OiltypeForAdd.Label, 
+       OiltypeForAdd.BurnRatio, 
+       OiltypeForAdd.MainCat, 
+       OiltypeForAdd.SubCat, 
+       OiltypeForAdd.msrepl_tran_version"
+  FromList="OilType OiltypeForAdd">
   <EntityUsage
     Name="OiltypeForAdd"
     Entity="model.EO.OiltypeForAdd"/>
@@ -29,30 +32,114 @@
     PrecisionRule="true"
     EntityAttrName="Label"
     EntityUsage="OiltypeForAdd"
-    AliasName="Label"/>
+    AliasName="Label">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OiltypeForAddView.Label_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Burnratio"
     PrecisionRule="true"
     EntityAttrName="Burnratio"
     EntityUsage="OiltypeForAdd"
-    AliasName="BurnRatio"/>
+    AliasName="BurnRatio">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OiltypeForAddView.Burnratio_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Maincat"
     PrecisionRule="true"
     EntityAttrName="Maincat"
     EntityUsage="OiltypeForAdd"
-    AliasName="MainCat"/>
+    AliasName="MainCat">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OiltypeForAddView.Maincat_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Subcat"
     PrecisionRule="true"
     EntityAttrName="Subcat"
     EntityUsage="OiltypeForAdd"
-    AliasName="SubCat"/>
+    AliasName="SubCat">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+        <LABEL
+          ResId="model.VO.OiltypeForAddView.Subcat_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MsreplTranVersion"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="MsreplTranVersion"
     EntityUsage="OiltypeForAdd"
-    AliasName="msrepl_tran_version"/>
+    AliasName="msrepl_tran_version">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="OiltypeForAddViewCriteriaforLabel"
+    ViewObjectName="model.VO.OiltypeForAddView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="OiltypeForAddViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Label"
+        ViewAttribute="Label"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

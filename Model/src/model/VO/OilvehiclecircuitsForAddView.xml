@@ -12,7 +12,38 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <DesignTime>
+    <Attr Name="_description" Value="äæÚ ÇáÒíÊ"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="OiltypeForAddView1"
+    ViewObjectName="model.VO.OiltypeForAddView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OiltypeForAddView2"
+    ViewObjectName="model.VO.OiltypeForAddView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OiltypeForm"
+    ListVOName="OiltypeForAddView2"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OiltypeForm"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Label"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="OiltypeForAddViewCriteriaforLabel"/>
+  </ListBinding>
   <EntityUsage
     Name="OilvehiclecircuitsForAdd"
     Entity="model.EO.OilvehiclecircuitsForAdd"/>
@@ -29,35 +60,76 @@
     PrecisionRule="true"
     EntityAttrName="Oiltype"
     EntityUsage="OilvehiclecircuitsForAdd"
-    AliasName="OilType"/>
+    AliasName="OilType">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Oilcircuitid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Oilcircuitid"
     EntityUsage="OilvehiclecircuitsForAdd"
-    AliasName="OilCircuitID"/>
+    AliasName="OilCircuitID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Capacity"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Capacity"
     EntityUsage="OilvehiclecircuitsForAdd"
-    AliasName="Capacity"/>
+    AliasName="Capacity">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilvehiclecircuitsForAddView.Capacity_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Changeratio"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Changeratio"
     EntityUsage="OilvehiclecircuitsForAdd"
-    AliasName="ChangeRatio"/>
+    AliasName="ChangeRatio">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilvehiclecircuitsForAddView.Changeratio_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Replaceratio"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Replaceratio"
     EntityUsage="OilvehiclecircuitsForAdd"
-    AliasName="ReplaceRatio"/>
+    AliasName="ReplaceRatio">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilvehiclecircuitsForAddView.Replaceratio_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Changedistance"
     IsNotNull="true"
@@ -80,10 +152,57 @@
     EntityUsage="OilvehiclecircuitsForAdd"
     AliasName="PK"/>
   <ViewAttribute
-    Name="MsreplTranVersion"
-    IsNotNull="true"
+    Name="OiltypeForm"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="MsreplTranVersion"
-    EntityUsage="OilvehiclecircuitsForAdd"
-    AliasName="msrepl_tran_version"/>
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsUpdateable="false"
+    Expression="SELECT Label FROM  OilType  where ID= Oiltype"
+    LOVName="LOV_OiltypeForm">
+    <DesignTime>
+      <Attr Name="_description" Value="äæÚ ÇáÒíÊ"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilvehiclecircuitsForAddView.OiltypeForm_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OilcircuitForm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    Expression="SELECT  Label FROM OilCircuit where id=Oilcircuitid">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilvehiclecircuitsForAddView.OilcircuitForm_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VehiclegroupForm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    Expression="SELECT GroupName FROM VehicleGroups where ID=Vehiclegroupid"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

@@ -115,6 +115,12 @@
   <ViewUsage
     Name="OilvehiclecircuitsForAddView1"
     ViewObjectName="model.VO.OilvehiclecircuitsForAddView"/>
+  <ViewUsage
+    Name="OilcircuitcategoryForAddView1"
+    ViewObjectName="model.VO.OilcircuitcategoryForAddView"/>
+  <ViewUsage
+    Name="OilcircuitForAddView1"
+    ViewObjectName="model.VO.OilcircuitForAddView"/>
   <ViewLinkUsage
     Name="UserWithUserRole1"
     ViewLinkObjectName="model.VO.UserWithUserRole"

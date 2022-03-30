@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OilcircuitForAddView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="OilcircuitForAdd"
+    Entity="model.EO.OilcircuitForAdd"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="OilcircuitForAdd"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Label"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Label"
+    EntityUsage="OilcircuitForAdd"
+    AliasName="Label"/>
+  <ViewAttribute
+    Name="Oilcategoryid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Oilcategoryid"
+    EntityUsage="OilcircuitForAdd"
+    AliasName="OilCategoryID"/>
+  <ViewAttribute
+    Name="MsreplTranVersion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MsreplTranVersion"
+    EntityUsage="OilcircuitForAdd"
+    AliasName="msrepl_tran_version"/>
+</ViewObject>
