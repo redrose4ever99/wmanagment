@@ -6,13 +6,13 @@
   Name="OilcircuitcategoryForAddView"
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  BindingStyle="JDBC"
-  CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  SelectAllAttributes="false">
   <EntityUsage
     Name="OilcircuitcategoryForAdd"
     Entity="model.EO.OilcircuitcategoryForAdd"/>
@@ -29,24 +29,74 @@
     PrecisionRule="true"
     EntityAttrName="Label"
     EntityUsage="OilcircuitcategoryForAdd"
-    AliasName="Label"/>
+    AliasName="Label">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilcircuitcategoryForAddView.Label_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Changeeveryyrs"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Changeeveryyrs"
     EntityUsage="OilcircuitcategoryForAdd"
-    AliasName="ChangeEveryYrs"/>
-  <ViewAttribute
-    Name="MsreplTranVersion"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="MsreplTranVersion"
-    EntityUsage="OilcircuitcategoryForAdd"
-    AliasName="msrepl_tran_version"/>
+    AliasName="ChangeEveryYrs">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilcircuitcategoryForAddView.Changeeveryyrs_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="OilcircuitcategoryForAddViewCriteriaForLabel"
+    ViewObjectName="model.VO.OilcircuitcategoryForAddView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="OilcircuitcategoryForAddViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Label"
+        ViewAttribute="Label"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="OilcircuitForAddView"
     ViewLink="model.VO.FKOilCircuiOilCa3B16B004Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

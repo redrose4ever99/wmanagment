@@ -12,7 +12,32 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="OilcircuitcategoryForAddView1"
+    ViewObjectName="model.VO.OilcircuitcategoryForAddView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OilcategoryForm"
+    ListVOName="OilcircuitcategoryForAddView1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="OilcategoryForm"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Label"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Label"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="OilcircuitcategoryForAddViewCriteriaForLabel"/>
+  </ListBinding>
   <EntityUsage
     Name="OilcircuitForAdd"
     Entity="model.EO.OilcircuitForAdd"/>
@@ -29,19 +54,52 @@
     PrecisionRule="true"
     EntityAttrName="Label"
     EntityUsage="OilcircuitForAdd"
-    AliasName="Label"/>
+    AliasName="Label">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilcircuitForAddView.Label_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Oilcategoryid"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Oilcategoryid"
     EntityUsage="OilcircuitForAdd"
-    AliasName="OilCategoryID"/>
+    AliasName="OilCategoryID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.VO.OilcircuitForAddView.Oilcategoryid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
-    Name="MsreplTranVersion"
-    IsNotNull="true"
+    Name="OilcategoryForm"
+    IsUpdateable="false"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="MsreplTranVersion"
-    EntityUsage="OilcircuitForAdd"
-    AliasName="msrepl_tran_version"/>
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    Expression="SELECT Label FROM  OilCircuitCategory where id=Oilcategoryid"
+    LOVName="LOV_OilcategoryForm">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

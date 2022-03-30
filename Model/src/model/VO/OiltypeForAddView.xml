@@ -13,8 +13,7 @@
        OiltypeForAdd.Label, 
        OiltypeForAdd.BurnRatio, 
        OiltypeForAdd.MainCat, 
-       OiltypeForAdd.SubCat, 
-       OiltypeForAdd.msrepl_tran_version"
+       OiltypeForAdd.SubCat"
   FromList="OilType OiltypeForAdd">
   <EntityUsage
     Name="OiltypeForAdd"
@@ -89,20 +88,6 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="MsreplTranVersion"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="MsreplTranVersion"
-    EntityUsage="OiltypeForAdd"
-    AliasName="msrepl_tran_version">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYHINT
-          Value="Hide"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
   <ViewCriteria
     Name="OiltypeForAddViewCriteriaforLabel"
     ViewObjectName="model.VO.OiltypeForAddView"
@@ -134,7 +119,6 @@
         ViewAttribute="Label"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>

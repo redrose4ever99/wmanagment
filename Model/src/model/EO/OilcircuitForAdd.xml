@@ -22,10 +22,9 @@
   <Attribute
     Name="Label"
     IsNotNull="true"
-    Domain="model.EO.NVARCHAR8"
     ColumnName="Label"
     SQLType="STRUCT"
-    Type="model.EO.common.NVARCHAR8"
+    Type="java.lang.String"
     ColumnType="NVARCHAR"
     TableName="OilCircuit"/>
   <Attribute
@@ -35,15 +34,6 @@
     SQLType="INTEGER"
     Type="java.lang.Integer"
     ColumnType="INT"
-    TableName="OilCircuit"/>
-  <Attribute
-    Name="MsreplTranVersion"
-    IsNotNull="true"
-    Domain="model.EO.UNIQUEIDENTIFIER2"
-    ColumnName="msrepl_tran_version"
-    SQLType="STRUCT"
-    Type="model.EO.common.UNIQUEIDENTIFIER2"
-    ColumnType="UNIQUEIDENTIFIER"
     TableName="OilCircuit"/>
   <AccessorAttribute
     Name="OilcircuitcategoryForAdd"
